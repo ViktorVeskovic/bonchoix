@@ -1,6 +1,5 @@
-{% schema %}
 {
-  "name": "pizdamaterina",
+  "name": "randomsection",
   "settings": [
     {
       "type": "image_picker",
@@ -8,4 +7,3 @@
     }
   ]
 }
-{% endschema %}
