@@ -22,11 +22,12 @@
 }
 {% endschema %}
 
-<script>
-    console.log( {{ settings | json }} );
-</script>
-
 <div>
-  <div>title:{{ title_2 }}</div>
+  <div>title:{{ section.settings.title_2 }}</div>
+  <div>title:{{ section.settings.collection_2 }}</div>
+
+  <div class="visionaries-hero-image">
+        {% render 'simple-image' src:section.settings.collection_2_image %}
+    </div>
   {{section.settings}}
 </div>
