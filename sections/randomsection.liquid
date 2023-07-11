@@ -22,8 +22,11 @@
 }
 {% endschema %}
 
-<div>
-  {{title_2}}
+<script>
+    console.log( {{ settings | json }} );
+</script>
 
-  {{collection_2}}
+<div>
+  <div>title:{{ title_2 }}</div>
+  {{section.settings}}
 </div>
