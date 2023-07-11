@@ -1,24 +1,3 @@
-{
-  "sections": {
-    "main": {
-      "type": "main-page",
-      "settings": {
-        "padding_top": 28,
-        "padding_bottom": 28
-      }
-    },
-    "fa1363ff-257b-449f-8b5f-5e87edd2472c": {
-      "type": "custom-liquid",
-      "settings": {
-        "custom_liquid": "",
-        "color_scheme": "",
-        "padding_top": 40,
-        "padding_bottom": 52
-      }
-    }
-  },
-  "order": [
-    "main",
-    "fa1363ff-257b-449f-8b5f-5e87edd2472c"
-  ]
-}
+<div>
+{% section 'randomsection' %}
+<div>
