@@ -1,9 +1,0 @@
-{
-  "name": "randomsection",
-  "settings": [
-    {
-      "type": "image_picker",
-      "id": "imidz"
-    }
-  ]
-}
