@@ -1,8 +1,0 @@
-.quotation {
-    p {
-        margin-bottom:2rem;
-        @include respond-to(md) {
-            margin-bottom: 1.5rem;
-        }
-    }
-}

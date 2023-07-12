@@ -1,9 +1,0 @@
-.text-on-read {
-    padding:12.1rem 1.1rem .6rem .5rem;
-    @include respond-to(md) {
-        padding:18rem 1.6rem 1rem 1.6rem;
-    }
-    @include respond-to(lg) {
-        padding:15.2rem 5.1rem 2rem 2.2rem;
-    }
-}

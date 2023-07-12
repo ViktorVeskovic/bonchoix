@@ -1,9 +1,0 @@
-{% comment %} <script type="text/javascript" src="{{ 'vendors.bundle.js' | asset_url }}" defer></script> {% endcomment %}
-{% comment %} <script src="{{ template | handleize | append: '.bundle.js' | asset_url }}" defer></script> {% endcomment %}
-{% assign tchek = template | handleize %}
-{% if tchek == "product" %} 
-<script src="{{ template | handleize | append: '.bundle.js' | asset_url }}" defer></script>
-{% else %}
-<script src="{{ 'index.bundle.js' | asset_url }}" defer></script>
-{% endif %}
-<script src="{{ 'theme.bundle.js' | asset_url }}" defer></script>
