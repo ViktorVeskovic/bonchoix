@@ -1,0 +1,5 @@
+<div class="variants">
+    {% for variant in product.variants %}
+        <div class="variant-box" data-available="{{variant.available}}" data-id="{{variant.id}}" data-price="{{variant.price}}">{{variant.title}}</div>
+    {% endfor %}
+</div>

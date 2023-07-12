@@ -1,0 +1,101 @@
+// @import "vendor/bootstrap-utilities.scss";
+// @import "vendor/bootstrap-grid.scss";
+@import "./common/custom.scss";
+@import '~bootstrap/scss/bootstrap.scss';
+
+@import "utility/normalize";
+@import "utility/reset";
+@import "utility/spacing";
+@import "utility/link";
+
+@import "common/fonts";
+@import "common/responsive"; 
+@import "common/variables";
+@import "common/colors";
+@import "common/typography";
+@import "common/fontConfig";
+@import "common/fontStyles";
+@import "common/general";
+@import "common/utilities";
+@import "common/utils";
+@import "common/spacings";
+
+@import "common/interactions";
+@import "common/proportion-image";
+@import "components/dropdown";
+@import "components/filters";
+@import "components/fullscreen-menu";
+@import "components/product-header";
+
+@import "vendor/swiper";
+
+@import "components/global-footer";
+@import "components/global-header";
+@import "components/gdpr-banner";
+@import "components/global-cart";
+@import "components/product-template";
+@import "components/magazin--index";
+
+@import "components/hero";
+@import "components/header";
+@import "components/button";
+@import "components/footer";
+@import "components/faq";
+@import "components/product";
+@import "components/menu-drawer";
+@import "components/faq-accordion";
+@import "components/contact";
+@import "components/back-to-top";
+@import "components/contact-email";
+@import "components/contact-form";
+@import "components/image-left";
+@import "components/tim-joo";
+
+@import "components/text-on-red";
+@import "components/quotation";
+@import "components/philosophy-cards";
+@import "components/philosophy-two-image-card";
+@import "components/red-quote";
+@import "components/visionaries-hero";
+@import "components/visionaries-list";
+@import "components/visionaries-card";
+@import "components/product-card";
+@import "components/collection-widget";
+@import "components/home-hero";
+@import "components/inspired--index";
+
+
+// LANDING PAGE
+@import "components/landing/landing-top";
+@import "components/landing/landing-middle";
+@import "components/landing/landing-bottom";
+@import "components/landing/title-text";
+@import "components/landing/accordion";
+
+// DETAILS PAGE
+@import "components/details/details-hero";
+@import "components/details/details-two-column";
+@import "components/details/details-text-image";
+@import "components/details/details-middle";
+@import "components/details/details-image-caption";
+
+// INDEX
+@import "components/index/multi-slider-index";
+@import "components/index/home-fw-image";
+@import "components/index/image-hover";
+@import "components/index/home-magazin";
+
+@import "templates/page-collections";
+@import "templates/page";
+@import "templates/cart-page";
+@import "templates/contact";
+@import "templates/collection";
+@import "templates/product";
+@import "templates/regimen";
+
+@import "~locomotive-scroll/dist/locomotive-scroll";
+
+html.has-smooth-scroll #wrapper {
+    position: fixed;
+    width:100%;
+}

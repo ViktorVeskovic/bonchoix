@@ -1,0 +1,101 @@
+<section 
+class="details-two-column row  pb-md-6 position-relative
+{% if bgBlack %} bg-lightBlack
+{% else %} bg-baige
+{% endif %}">
+
+    <!-- LEFT COL -->
+    <div class='col-md-6 pb-4 pb-md-0 pb-xl-6'>
+    {% assign image1 = section.settings.image_1 | img_url: 'master' %}
+        {% 
+            render 'text-content' 
+            src: image1
+            alt: 'Seneca'
+            caption:section.settings.text_1
+            paddedCaption: true
+            bigImage: true
+            proportion: 1.2
+            proportionMd: 1.38
+            proportionLg: 1.5
+            title: section.settings.title_1
+            content: section.settings.text_1
+        %}
+    </div>
+    <!-- END :: LEFT COL -->
+
+    <!-- RIGHT COL -->
+    <div class='col-md-6 pb-6 pb-md-0'>
+    {% assign image2 = section.settings.image_2 | img_url: 'master' %}
+        {% 
+            render 'text-content' 
+            src: image2
+            alt: 'Seneca'
+            caption: section.settings.text_2
+            paddedCaption: false
+            bigImage: false
+            proportion: 1.2
+            proportionMd: 1.157
+            proportionLg: 1.1
+            title: section.settings.title_2
+            content: section.settings.text_2
+        %}
+    </div>
+    <!-- END :: RIGHT COL -->
+
+</section>
+
+
+{% schema %}
+{
+  "name": "Details Two Column",
+  "tag": "section",
+  "settings": [
+	{
+        "id": "image_1",
+        "type": "image_picker",
+        "label": "Image 1"
+    },
+	{
+      "id": "text_1",
+      "type": "text",
+      "label": "Text 1st",
+      "default":"Tim wears the Forma Jacket in Olive and the Vanta Pant in Herringbone."
+    },
+	{
+      "id": "title_1",
+      "type": "text",
+      "label": "Text 2nd",
+      "default": "Continuous improvement is better than delayed perfection."
+    },
+	{
+      "id": "content_1",
+      "type": "text",
+      "label": "Text 2nd",
+      "default": "I love this Mark Twain quote. I remember watching an episode of Abstract where Ian Spalter said, 'I relate to design how comedians practice their jokes.' They put a joke out there. They test in front of the audience. They see how the reaction is. And based on their reaction, they tweak the joke a little bit. The next night they'll say the joke a little bit differently. The point is, it's testing, iterating, improving, and just being okay with the fact that it won't be in its perfect form in the very beginning. But knowing that it can get there through just putting it out there."
+    },
+    {
+        "id": "image_2",
+        "type": "image_picker",
+        "label": "Image 1"
+    },
+	{
+      "id": "text_2",
+      "type": "text",
+      "label": "Text 1st",
+      "default":"Tim wears the Modena Shirt in White."
+    },
+	{
+      "id": "title_2",
+      "type": "text",
+      "label": "Text 2nd",
+      "default": "You have to think, I'm going to make it. I'm going to drop in."
+    },
+	{
+      "id": "content_2",
+      "type": "text",
+      "label": "Text 2nd",
+      "default": "I think overthinking about the consequences instills fear in people, but it's like... I used to skateboard, and I remember the first time I went in a halfpipe, the vertical is pretty high so you have to do this drop that you put all your force into on your front foot, otherwise, the moment you doubt yourself and lean back, you're going to wipe out. You have doubt because you are thinking ‘what if I crash, what if I fail?’"
+    }
+  ]
+}
+{% endschema %}

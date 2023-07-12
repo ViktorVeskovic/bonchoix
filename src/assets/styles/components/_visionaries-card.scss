@@ -1,0 +1,66 @@
+.visionaries-card {
+    width:100%;
+    margin-bottom: 4rem;
+    @include respond-to(md) {
+        width:18.8rem;
+        margin-bottom: 0rem;
+    }
+    @include respond-to(lg) {
+        width:42.1rem;
+    }
+    &.small {
+        width:100%;
+        margin-bottom: 4rem;
+        @include respond-to(md) {
+            width:18.8rem;
+            margin-bottom: 0rem;
+        }
+        @include respond-to(lg) {
+            width:49.5em;
+        } 
+    }
+    &:first-child {
+        .visionaries-card-text {
+            margin-left:.8rem;
+            @include respond-to(md) {
+                margin-left:1.6rem;
+            }
+            @include respond-to(lg) {
+                margin-left:7.25rem;
+            } 
+        }
+    }
+    &-text {
+        .title {
+            text-transform: uppercase;
+            svg {
+                width:.75rem;
+                @include respond-to(lg) {
+                    width:1.35rem;
+                }
+            }
+        }
+        margin-left:.8rem;
+        margin-top:1.5rem;
+        @include respond-to(md) {
+            margin-left:.8rem;
+            margin-top:1.5rem;
+        }
+        @include respond-to(lg) {
+            margin-left:5.1rem;
+            margin-top:5rem;
+        } 
+        .avatar {
+            margin-top:1rem;
+            img {
+                border-radius:50%;
+                max-width: 3rem;
+                margin-right:.65rem;
+            }
+        }
+        .date {
+            margin-bottom:.6rem;
+            text-transform: uppercase;
+        }
+    }
+}

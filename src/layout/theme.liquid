@@ -1,0 +1,55 @@
+<!doctype html>
+<html class="no-js supports-no-cookies" lang="{{ shop.locale }}">
+  <head>
+   <script>
+    window['friendbuy'] = window['friendbuy'] || [];
+    window['friendbuy'].push(['site', 'site-368580a9-www.thinkseneca.com']);
+    window['friendbuy'].push(['track', 'customer',
+        {
+            id: '{{customer.id}}', //INSERT CUSTOMER ID PARAMETER
+            email: '{{customer.email}}', //INSERT CUSTOMER EMAIL PARAMETER
+            first_name: '{{customer.first_name}}', //INSERT CUSTOMER FIRST NAME PARAMETER
+            last_name: '{{customer.last_name}}' //INSERT CUSTOMER LAST NAME PARAMETER
+        }
+    ]);
+    (function (f, r, n, d, b, y) {
+        b = f.createElement(r), y = f.getElementsByTagName(r)[0];b.async = 1;b.src = n;y.parentNode.insertBefore(b, y);
+    })(document, 'script', '//djnf6e5yyirys.cloudfront.net/js/friendbuy.min.js');
+  </script>
+  <script>
+            window['friendbuy'] = window['friendbuy'] || [];
+            window['friendbuy'].push(['track', 'order',
+              {
+                id: '{{order_number}}', //INPUT ORDER ID
+                amount: '0.00', //INPUT ORDER AMOUNT
+                // coupon_code: '', //OPTIONAL, coupon code if used for order
+                // new_customer: false, //OPTIONAL, true if this is the customer's first purchase
+                email: '' //INPUT EMAIL
+              }
+            ]);
+        </script>
+          
+      <script type="text/javascript">(function e(){var e=document.createElement("script");e.type="text/javascript",e.async=true,e.src="//staticw2.yotpo.com/h0jvVTssyZLaCXUy2m8evxepupdMrHDMTuLKsqfh/widget.js";var t=document.getElementsByTagName("script")[0];t.parentNode.insertBefore(e,t)})();</script>
+      
+      {% include 'head' %}
+      {{ content_for_header }}
+      {% include 'font-imports' %}
+    </head>
+    
+  <body class="layout layout--{{ template | handleize }}">
+      {% comment %} {% include 'global-header' %} {% endcomment %}
+      {% section 'header-component' %}
+      {% unless template == 'cart' %}
+      {% include 'global-cart' %}
+      {% endunless %}
+    
+      <main data-router-wrapper id="content-for-layout" class="template template--{{ template | handleize }}" >
+      
+          {{ content_for_layout }}
+          
+      </main>
+      {% include 'json-ld' %}
+      {% include 'scripts' %}
+  </body>
+</html>
+  

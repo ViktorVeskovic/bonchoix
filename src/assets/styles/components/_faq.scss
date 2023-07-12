@@ -1,0 +1,69 @@
+.faq {
+    .faq-holder {
+        padding:2.5rem 1rem 3rem;
+        @include respond-to(md) {
+            padding:4rem 19rem 5rem;
+        }
+        h1 {
+            margin-bottom:2.5rem;
+            @include respond-to(md) {
+                margin-bottom:4rem;
+            }
+        }
+    }
+}
+
+button.accordion {
+    background-color: transparent;
+    text-align: left;
+    color: #000;
+    cursor: pointer;
+    padding: 1rem;
+    padding-left: 0;
+    padding-right: 0;
+    font-weight: bold;
+    width: 100%;
+    border:none;
+    border-bottom:1px solid black;
+    transition: 0.4s;
+}
+
+button.accordion.active, button.accordion:hover {
+    background-color: transparent;
+    color: #000;
+}
+
+button.accordion:after {
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAAMCAYAAABWdVznAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAzSURBVHgB3ZAxCgAACAKtF/X/pS/0pJa2aoiW6ECcRBSo0VCCMeRggFCPk3BbN3S8vtUB23wEzzxBQlMAAAAASUVORK5CYII=');
+    color: #000;
+    font-weight: bold;
+    float: right;
+    margin-left: 5px;
+}
+
+button.accordion.active:after {
+    content: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAwAAAACCAYAAABsfz2XAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAaSURBVHgBlcABAQAACAIg6v8nr7lBDjF4owJHSADDUQISzAAAAABJRU5ErkJggg==');
+}
+
+.panel {
+    padding-left: 0;
+    background-color: transparent;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out;
+    p {
+        padding:1.5rem 0 2rem;
+    }
+}
+
+.space {
+  margin-bottom: 85px;
+}
+
+.questions{
+  margin-bottom: 190px;
+}
+
+.answers {
+  margin-top: 90px;
+}

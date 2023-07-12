@@ -1,0 +1,19 @@
+{% comment %}
+SNIPPET - accordion-item.liquid
+@param { number, string } id - the unique id / accordion.js works based on this
+@param { string } title - accordion item title
+@param { string } content - accordion item content
+{% endcomment %}
+
+<div 
+class="accordion-item overflow-hidden" 
+data-id='{{ id }}'>
+    <div class="d-flex justify-content-between align-items-start mb-7">
+        <h3 class="text-uppercase font-bold">{{ title }}</h3>
+
+        <div class="accordion-plus">
+            {% render 'accordion-plus' %}
+        </div>
+    </div>
+    <div class="accordion-item-content {{ contentClass }}">{{ content }}</div>
+</div>

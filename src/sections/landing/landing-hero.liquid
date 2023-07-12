@@ -1,0 +1,35 @@
+{% assign sectionImage = section.settings.image | img_url: '2000x' %}
+<section class="visionaries-hero">
+    <div class="visionaries-hero-image">
+        {% render 'simple-image' src:sectionImage %}
+    </div>
+    <div class="visionaries-hero-text">
+        {% render 'vanta' %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Visionaries Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title_text",
+      "type": "textarea",
+      "label": "Text",
+      "default":"Vanta"
+    },
+    {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Landing",
+      "name": "Landing Hero"
+    }
+  ]
+}
+{% endschema %}

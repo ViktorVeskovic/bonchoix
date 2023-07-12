@@ -1,0 +1,11 @@
+{
+    "name": "Landing Dinamic Page",
+    "sections": {
+      "hero": {
+        "type": "landing-hero"
+      }
+    },
+    "order": [
+      "hero"
+    ]
+  }

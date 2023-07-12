@@ -1,0 +1,44 @@
+@import "common/fontConfig";
+
+@mixin fontStyles($size, $height, $letterSpacing, $important: false) {
+    $suffix: if($important, " !important", "");
+    font-size: $size#{$suffix};
+    line-height: $height#{$suffix};
+    letter-spacing: $letterSpacing + em #{$suffix};
+} 
+
+
+@mixin generateFontStyles($values, $key: false) {
+    @each $className, $cssValues in $values {
+      $suffix: if($key, "-" + $key, "");
+      .#{$className}#{$suffix} {
+        @include fontStyles(nth($cssValues, 1), nth($cssValues, 2), nth($cssValues, 3), $key);
+      }
+
+      #{$className}#{$suffix} {
+        @include fontStyles(nth($cssValues, 1), nth($cssValues, 2), nth($cssValues, 3), $key);
+      }
+    }
+}
+
+@each $key, $values in $fontConfig {
+    @if $key == 'mobile' {
+      // MOBILE - NO SUFFIXES (h1)
+      @include generateFontStyles($values)
+    } @else {
+    //   MEDIA QUERIES - WITH SUFFIXES (.h1-md)
+      @include respond-to($key) {
+        @include generateFontStyles($values);
+        @include generateFontStyles($values, $key)
+      }
+    }
+}
+
+.font-bold {
+  font-weight: bold !important;
+}
+
+.h1, .p1, .p2, .h1-big, .h2, h6, .h2-widget, .p2-widget, .btn, .h1-large {
+  font-family: 'NeueHaasDisplay-Mediu';
+  font-weight: bold;
+}

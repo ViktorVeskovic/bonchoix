@@ -1,0 +1,39 @@
+<div class="texts-image d-flex flex-column">
+
+    <div class="d-xl-flex pt-1 mb-4 mb-xl-6 ps-1 ps-xl-2 pt-md-3">
+        <!-- TITLE -->
+        <div>
+            <h2 
+            class="h2 mb-1 should-animate from-y dl-1 pe-2 pe-md-4 pe-xl-0"
+            data-scroll
+            data-scroll-repeat="false">{{title1}}</h2>
+        </div>
+        <!-- END :: TITLE -->
+        
+        <!-- CONTENT -->
+        <div class="col-xl-5 pe-md-3">
+            <p 
+            class="pe-md-7 h6 should-animate from-y dl-2"
+            data-scroll
+            data-scroll-repeat="false">
+                {{title2}}
+            </p>
+        </div>
+        <!-- END :: CONTENT -->
+
+    </div>
+
+    <!-- SMALL IMAGE -->
+    <div class="ps-4 ps-md-1 pe-1 pe-md-4 ps-xl-5 pe-xl-5">
+        {% 
+            render 'proportion-image' 
+            src: image1 
+            proportion: 1.305
+            proportionMd: 1.193
+            proportionLg: 1.243
+            alt: 'Seneca '
+        %}
+    </div>
+    <!-- END :: SMALL IMAGE -->
+
+</div>

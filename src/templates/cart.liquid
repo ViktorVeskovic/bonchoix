@@ -1,0 +1,152 @@
+<div id="cart" class="d-flex flex-column flex-md-row justify-content-between lifo-cart hide"  data-router-view="cart" data-free-ship-threshold="{{ settings.free_shipping | json }}" v-cloak>
+  {% comment %} PRODUCT PART {% endcomment %}
+  <div class="lifo-cart-wrap">
+    <div class="d-flex flex-row">
+        <h1 class="h3 font-sans my-cart flex-shrink-0">My Cart</h1>
+        {% render 'cartline' %} 
+    </div>
+    <div class="" :class="{active: cartError}">
+      <span class="error type--p color--error">${ cartError }</span>
+    </div>
+    <ul class="lifo-list">
+      <line-item inline-template
+      v-for="item in cartData.items"
+      v-if="item.quantity > 0"
+      :key="item.key"
+      :item="item"
+      :loading="loadingIds.includes(item.variant_id)"
+      v-on:change-line="changeCart">
+
+      {% comment %} PRODUCT LINE START {% endcomment %}
+        <li class="d-flex flex-row" :class="{loading: loading}">
+          <div class="">
+            <a v-if="item.image" :href="item.url">
+              <img class="lifo-img" :src="thumbnailImg" :alt="item.product_title">
+            </a>
+          </div>
+          <div class="wl-list-options d-flex align-items-center desktop-show">
+            <div class="options-holder flex-wrap flex-md-nowrap d-flex w-100 justify-content-between">
+            {% comment %} TITLE {% endcomment %}
+            <a data-mh="p-t-w" class="h5 product-title font-sans d-none d-md-block" :href="item.url">${ item.product_title }</a>
+            <div class="d-flex justify-content-between align-items-center w-100">
+               <a data-mh="p-t-w" class="h5 product-title font-sans d-block d-md-none" :href="item.url">${ item.product_title }</a>
+               <div class="lifo-basket options d-block d-md-none" @click="changeLine(0)">
+               
+                    {% render 'empty' %}
+              </div>
+            </div>
+            <div class="options d-block d-md-none mobile-price w-100">
+                  <div class="p1 font-sans text-center" v-if="item.total_discount > 0">$${ origPrice }</div>
+                  <div class="font-sans p1 pc" :class="{ 'color--error': item.total_discount > 0 }">$${ price }</div>
+            </div>
+            {% comment %} <div class="options d-block d-md-none">
+                <div class="p2 font-sans lifo-option-name">Qty</div>
+                <div class="d-flex flex-row font-sans p1 pc">
+                  <div class="dec" @click="changeLine(item.quantity - 1)">
+                    -
+                  </div>
+                  <span class="qty lifo-qty">${ item.quantity }</span>
+                  <div class="inc" @click="changeLine(item.quantity + 1)">
+                    +
+                  </div>
+                </div>
+              </div> {% endcomment %}
+            <div class="d-flex justify-content-between align-items-center w-100 mb-1 mt-1">
+            
+
+            {% comment %} QTY {% endcomment %}
+              <div class="options d-none d-md-block">
+              <div class="p2 font-sans lifo-option-name">Qty</div>
+              <div class="d-flex flex-row font-sans p1 pc">
+                <div class="dec" @click="changeLine(item.quantity - 1)">
+                  -
+                </div>
+                <span class="qty lifo-qty">${ item.quantity }</span>
+                <div class="inc" @click="changeLine(item.quantity + 1)">
+                  +
+                </div>
+              </div>
+              </div>
+              {% comment %} OPTIONS {% endcomment %}
+
+              <div class="options d-block d-md-none">
+                <div class="p2 font-sans lifo-option-name">Qty</div>
+                <div class="d-flex flex-row font-sans p1 pc">
+                  <div class="dec" @click="changeLine(item.quantity - 1)">
+                    -
+                  </div>
+                  <span class="qty lifo-qty">${ item.quantity }</span>
+                  <div class="inc" @click="changeLine(item.quantity + 1)">
+                    +
+                  </div>
+                </div>
+              </div>
+              <div v-for="option in item.options_with_values" class="options">
+                  <div>
+                    <div class="p2 font-sans lifo-option-name">${option.name}</div>
+                    <div class="p1 font-sans lifo-option-value">${option.value}</div>
+                  </div>
+              </div>
+              {% comment %} PRICE {% endcomment %}
+              <div class="options d-none d-md-block">
+                <div class="p2 font-sans lifo-option-name">Price</div>
+                <div class="p1 font-sans text-center" v-if="item.total_discount > 0">$${ origPrice }</div>
+                <div class="font-sans p1 pc" :class="{ 'color--error': item.total_discount > 0 }">$${ price }</div>
+              </div>
+              {% comment %} EMPTY {% endcomment %}
+              <div class="lifo-basket options d-none d-md-block" @click="changeLine(0)">
+              <div style="opacity:0"  class="p2 font-sans lifo-option-name">Empty</div>
+                {% render 'empty' %}
+              </div>
+            </div>
+            {% comment %} <div class="">
+              <div class="">
+                <div class="dec" @click="changeLine(item.quantity - 1)">
+                  -
+                </div>
+                <span class="qty">${ item.quantity }</span>
+                <div class="inc" @click="changeLine(item.quantity + 1)">
+                  +
+                </div>
+                 <div class="" @click="changeLine(0)">{% render 'empty' %}</div>
+              </div>
+              
+              <div class="">
+                <span class="" v-if="item.total_discount > 0">$${ origPrice }</span>
+                <span class="" :class="{ 'color--error': item.total_discount > 0 }">$${ price }</span>
+              </div>
+              
+            </div> {% endcomment %}
+          </div>
+        </li>
+
+        {% comment %} PRODUCT LINE END {% endcomment %}
+      </line-item>
+      <div class="type--p empty-msg  h5 font-sans" v-if="cartData.item_count === 0">How Sad! Your bag is currently empty.</div>
+    </ul>
+  </div>
+    {% comment %} PRODUCT PART END{% endcomment %}
+  {% comment %} PRICE BOX START {% endcomment %}
+  <div class="section-1 lifo-summary d-flex flex-column justify-content-between">
+
+    {% comment %} <span class="">You’re $${fromFreeShip} away from free shipping!</span> {% endcomment %}
+    <div class="d-md-flex flex-row align-items-center d-none">
+      <div class="h3 font-sans lifo-line">Summary</div>
+      {% render 'cartline' %} 
+    </div>
+    <div class="d-flex flex-row justify-content-between">
+        <div class="h5 font-sans">Subtotal</div>
+        <div class="h5 font-sans">$${total}</div>
+    </div>
+    <div>
+    <div class="p2 font-sans text-center ">Shipping & Taxes Calculated at Checkout</div>
+        <a v-if="cartData.items && cartData.items.length > 0" class="fp-button hero-button color-white bg-black button-lifo  button-1 d-flex justify-content-center flex-column align-items-center font-sans checkout-link clickable--contained" :href="checkoutUrl">
+         CHECKOUT</a>
+   
+    {% comment %} <a v-else class="">
+      Empty Bag
+    </a> {% endcomment %}
+    </div>
+  </div>
+  {% comment %} PRICE BOX END {% endcomment %}
+</div>

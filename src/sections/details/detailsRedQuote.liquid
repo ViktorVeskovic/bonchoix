@@ -1,0 +1,22 @@
+{% render 'red-quote' title: section.settings.title_text subtitle:section.settings.title_subtext class:"mt-0" %}
+
+{% schema %}
+{
+  "name": "Philosophy Red Quotation",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title_text",
+      "type": "textarea",
+      "label": "Text",
+      "default":"YOU ARE YOUR CHOICES."
+    },
+    {
+      "id": "title_subtext",
+      "type": "textarea",
+      "label": "Subtext",
+      "default":"SENECA, 63 AD"
+    }
+  ]
+}
+{% endschema %}

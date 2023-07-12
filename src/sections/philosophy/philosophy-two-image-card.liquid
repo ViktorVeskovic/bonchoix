@@ -1,0 +1,57 @@
+<section class="two-image-card d-flex justify-content-between flex-wrap">
+{% for block in section.blocks %}
+{% assign blockImage = block.settings.image | img_url: '2000x' %}
+    <div class="two-image-card-holder">
+        <div class="single-card-image">
+            {% render 'simple-image' src:blockImage %}
+        </div>
+        <div class="single-cart-quote position-relative">
+        {% render 'quotation' quote: block.settings.quote author:block.settings.author %}
+        <p class="year position-absolute font-bold p2">{{block.settings.year}}</p>
+        </div>
+    </div>
+{% endfor %}
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Philosophy Blocks Bottom",
+    "blocks": [
+      {
+        "type": "text",
+        "name": "Block Cards",
+        "settings": [
+          {
+            "id": "image",
+            "type": "image_picker",
+            "label": "Image"
+          },
+          {
+            "id": "quote",
+            "type": "textarea",
+            "label": "Quotation"
+          },
+          {
+            "id": "author",
+            "type": "textarea",
+            "label": "Author"
+          },
+          {
+            "id": "year",
+            "type": "textarea",
+            "label": "Year"
+          }
+          
+        ]
+      }
+    ],
+      "presets": [
+        {
+          "category": "Philosophy Page",
+          "name": "Philosophy Blocks"
+        }
+      ]
+  }
+{% endschema %}

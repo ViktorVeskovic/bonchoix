@@ -1,0 +1,263 @@
+.contact {
+    padding: 12.5vw 0 15.625vw;
+
+    @include respond-to(md) {
+        padding: 5.85938vw 0 8.46354vw;
+    }
+
+    @include respond-to(lg) {
+        padding: 4.94792vw 0 0;
+    }
+
+    &__title {
+        text-align: center;
+        font-size: 12.5vw;
+        margin-bottom: 12.5vw;
+        
+        @include respond-to(md) {
+            font-size: 5.20833vw;
+            margin-bottom: 6.11979vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: 4.58333vw;
+            margin-bottom: 2.34375vw;
+        }
+    }
+
+    &__main-img-wrapper {
+        width: 100%;
+        height: 92.1875vw;
+        padding: 0 14.6875vw;
+        margin-bottom: 3.125vw;
+        position: relative;
+
+        @include respond-to(md) {
+            height: 37.10938vw;
+            padding: 0 35.80729vw;
+            margin-bottom: 1.95312vw;
+        }
+
+        @include respond-to(lg) {
+            padding: 0 36.35417vw;
+            height: 35.57292vw;
+            margin-bottom: 3.38542vw;
+        }
+
+        &::before {
+            content: "";
+            position: absolute;
+            display: block;
+            width: 1px;
+            height: 121.15625vw;
+            left: 5.625vw;
+            top: 5.9375vw;
+            background: rgba(0,0,0,.6);
+            opacity: .6;
+            -webkit-transform-origin: top;
+            transform-origin: top;
+            -webkit-transform: rotate(-46.8deg);
+            transform: rotate(-46.8deg);
+            z-index: -1;
+
+            @include respond-to(md) {
+                height: 47.52604vw;
+                left: 33.20312vw;
+                top: 1.69271vw;
+                transform: rotate(-44.3deg);
+            }
+
+            @include respond-to(lg) {
+                height: 51.60521vw;
+                left: 30.67708vw;
+                top: -.15625vw;
+                transform: rotate(-51.9deg);
+            }
+        }
+
+        img {
+            width: 100%;
+        }
+    }
+
+    &__small-title {
+        font-size: 6.875vw;
+        font-style: normal;
+        line-height: 15vw;
+        padding: 0 12.5vw;
+        margin-bottom: 3.4375vw;
+        text-align: center;
+
+        @include respond-to(md) {
+            font-size: 3.25521vw;
+            line-height: 5.59896vw;
+            margin-bottom: 1.30208vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: 1.97917vw;
+            line-height: 2.23958vw;
+            margin-bottom: 2.1875vw;
+        }
+    }
+
+    &__address {
+        padding: 0 13.75vw;
+        font-size: 5.625vw;
+        line-height: 7.5vw;
+        margin-bottom: 17.1875vw;
+        text-align: center;
+
+        @include respond-to(md) {
+            font-size: 3.125vw;
+            line-height: 3.90625vw;
+            padding: 0 27.99479vw;
+            margin-bottom: 7.8125vw;
+        }
+
+        @include respond-to(lg) {
+            font-size: 2.34375vw;
+            line-height: 2.76042vw;
+            padding: 0 33.85417vw;
+            margin-bottom: 7.1875vw;
+        }
+    }
+
+    &__cols {
+        padding: 0 6.25vw;
+
+        @include respond-to(md) {
+            display: flex;
+            justify-content: space-between;
+            padding: 0 5.20833vw;
+        }
+
+        @include respond-to(lg) {
+            padding: 0 15.625vw 7.29167vw;
+        }
+    }
+    
+    &__col {
+        margin-bottom: 17.1875vw;
+        font-size: 4.375vw;
+        line-height: 6.25vw;
+        
+        @include respond-to(md) {
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 0;
+            max-width: 25.39062vw;
+            font-size: 1.5625vw;
+            line-height: 2.73438vw;
+            margin-bottom: 0;
+            flex-grow: 1;
+        }
+
+        @include respond-to(lg) {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            max-width: 16.14583vw;
+            text-align: center;
+            font-size: .83333vw;
+            line-height: 1.25vw;
+        }
+
+        h4 {
+            font-family: GTSectraDisplay-Regular,serif;
+            font-size: 10.9375vw;
+            line-height: 10.625vw;
+            letter-spacing: .20938vw;
+            margin-bottom: 9.375vw;
+            font-weight: 400;
+
+            @include respond-to(md) {
+                font-size: 3.90625vw;
+                line-height: 5.59896vw;
+                margin-bottom: 3.90625vw;
+            }
+
+            @include respond-to(lg) {
+                font-size: 1.97917vw;
+                line-height: 2.23958vw;
+                margin-bottom: 3.90625vw;
+                text-align: center;
+                letter-spacing: normal;
+            }
+        }
+
+        a {
+            letter-spacing: .40938vw;
+            display: inline-block;
+            position: relative;
+            margin-top: 4.6875vw;
+
+            @include respond-to(md) {
+                font-size: 1.5625vw;
+                line-height: 2.60417vw;
+                letter-spacing: .14714vw;
+                align-self: flex-start;
+                padding-top: 7.16146vw;
+                margin-top: auto;
+            }
+
+            @include respond-to(lg) {
+                align-self: center;
+                font-size: .83333vw;
+                line-height: 1.04167vw;
+                letter-spacing: .07812vw;
+                padding-top: 1.40625vw;
+            }
+
+            &::after {
+                content: "";
+                height: 2px;
+                width: 100%;
+                background: #919191;
+                position: absolute;
+                bottom: -1.25vw;
+                left: 0;
+            }
+        }
+    }
+
+    &__bottom-images {
+        display: none;
+
+        @include respond-to(lg) {
+            display: flex;
+
+            & > * {
+                max-width: 50%;
+                flex: 0 0 50%;
+                align-items: center;
+            }
+
+            img {
+                width: 100%;
+            }
+        }
+    }
+
+    &__bottom-image-wrapper {
+        padding: 14.0625vw 0 0;
+        background: #f1f2f2;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+
+        img {
+            width: 21.92708vw;
+            height: 21.92708vw;
+            margin-bottom: 6.19792vw;
+        }
+
+        span {
+            display: block;
+            width: 5.20833vw;
+            height: 1.66667vw;
+        }
+    }
+}

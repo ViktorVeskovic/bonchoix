@@ -1,0 +1,171 @@
+<section class="landing-middle row bg-red">
+
+    <div class="col-md-6 col-xl-5">
+        <div class="ps-1 ps-xl-6 color-white pt-1 pb-4 pt-md-0 pb-md-3 pb-xl-6 position-relative mt--1">
+            <!-- TOP BG -->
+            <div class="position-absolute l-0 t-0 w-100vw h-100 bg-lightBlack"></div>
+            <!-- END :: TOP BG -->
+
+            <!-- TITLE TEXT -->
+            <div class="position-relative z-1">
+                {% render 
+                    'title-text' 
+                    title: section.settings.title_text_1
+                    content: section.settings.title_text_content
+                %}
+            </div>
+                <!-- END :: TITLE TEXT -->
+        </div>
+
+        <!-- MOBILE LEFT IMAGE -->
+        <div class="left-image d-block d-md-none">
+        {% assign leftImage = section.settings.imageLeft | img_url: 'master' %}
+            {% 
+                render 'parallax-image' 
+                src: leftImage
+                proportion: 1.37
+                proportionMd: 1.52
+                proportionLg: 1.52
+                alt: 'Seneca'
+            %}
+        </div>
+        <!-- END :: MOBILE LEFT IMAGE -->
+
+        <!-- TITLE TEXT -->
+        <div class="ps-1 ps-xl-6 pt-1 pt-md-2 pt-xl-4 pb-4 bg-red">
+            {% render 
+                'title-text' 
+                title: section.settings.title_text_2
+                content: section.settings.title_text_content_2
+            %}
+        </div>
+        <!-- END :: TITLE TEXT -->
+
+        <!-- LEFT IMAGE -->
+        <div class="left-image d-none d-md-block">
+        {% assign leftImage2 = section.settings.imageLeft_2 | img_url: 'master' %}
+            {% 
+                render 'parallax-image' 
+                src: leftImage2
+                proportion: 1.37
+                proportionMd: 1.52
+                proportionLg: 1.52
+                alt: 'Seneca'
+            %}
+        </div>
+        <!-- END :: LEFT IMAGE -->
+
+    </div>
+
+    <div class="col-md-6 col-xl-7 d-flex flex-column">
+        <!-- RIGHT IMAGE -->
+        <div class="pt-md-3 pt-xl-0 ps-xl-4 pe-xl-6">
+        {% assign rightImage = section.settings.imageRight | img_url: 'master' %}
+            {% 
+                render 'parallax-image' 
+                src: rightImage
+                proportion: 1.45
+                proportionMd: 1.51
+                proportionLg: 1.333
+                alt: 'Seneca'
+            %}
+        </div>
+        <!-- END :: RIGHT IMAGE -->
+
+        <!-- TITLE TEXT -->
+        <div class="d-flex flex-grow h-100 offset-xl-3 align-items-end ps-1 ps-xl-0 pe-md-5 pt-1 pt-md-0 pb-4 pb-xl-6 mb-xl-6">
+            {% render 
+                'title-text' 
+                title: section.settings.title_text_3
+                content: section.settings.title_text_content_3
+            %}
+        </div>
+        <!-- END :: TITLE TEXT -->
+
+    </div>
+
+    <!-- FULLWIDTH IMAGE -->
+    <div class="fullwidth-image">
+    {% assign fwImage = section.settings.imageFW | img_url: 'master' %}
+        {% 
+            render 'parallax-image' 
+            src: fwImage
+            proportion: 1.45
+            proportionMd: 0.71
+            proportionLg: 0.79
+            alt: 'Seneca'
+        %}
+    </div>
+    <!-- END :: FULLWIDTH IMAGE -->
+
+</section>
+
+{% schema %}
+{
+   "name": "Landing Middle Part",
+   "settings": [
+      {
+         "id": "title_text_1",
+         "type": "text",
+         "label": "Title Text",
+         "default": "PARED-DOWN PERFORMANCE"
+      },
+      {
+         "id": "title_text_content",
+         "type": "text",
+         "label": "Title Text Content",
+         "default": "Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+         "id": "imageLeft",
+         "type": "image_picker",
+         "label": "Image Left"
+      },
+      {
+         "id": "title_text_2",
+         "type": "text",
+         "label": "Title Text",
+         "default": "PARED-DOWN PERFORMANCE 2"
+      },
+      {
+         "id": "title_text_content_2",
+         "type": "text",
+         "label": "Title Text Content",
+         "default": "Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+         "id": "imageLeft_2",
+         "type": "image_picker",
+         "label": "Image left 2"
+      },
+      {
+         "id": "imageRight",
+         "type": "image_picker",
+         "label": "Image Right"
+      },
+      {
+         "id": "title_text_3",
+         "type": "text",
+         "label": "Title Text",
+         "default": "PARED-DOWN PERFORMANCE 3"
+      },
+      {
+         "id": "title_text_content_3",
+         "type": "text",
+         "label": "Title Text Content",
+         "default": "Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+         "id": "imageFW",
+         "type": "image_picker",
+         "label": "FW Image"
+      }
+    ],
+    "presets": [
+        {
+        "category": "Landing",
+        "name": "Landing Middle"
+        }
+    ]
+}
+{% endschema %}

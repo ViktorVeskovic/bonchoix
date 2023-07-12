@@ -1,0 +1,142 @@
+<section class="details-middle bg-red">
+	<!-- TOP IMAGE -->
+	<div class="top-image col-md-6 offset-md-6 col-xl-5 ps-1 pe-1 pe-md-0 pe-xl-5 ps-md-4 ps-xl-3 position-relative z-1">
+	{% assign image1 = section.settings.image_1 | img_url: 'master' %}
+		{% 
+            render 'parallax-image' 
+            src: image1 
+            proportion: 1.542
+            proportionMd: 1.485
+            proportionLg: 1.28
+            alt: 'Seneca'
+        %}
+	</div>
+	<!-- END :: TOP IMAGE -->
+
+    <!-- HEADLINE -->
+    <div class="px-1 px-xl-2 pt-1 pt-md-0 pb-1 pb-xl-6">
+        <h2 class="h1-big h1-big-md h1-large-lg text-uppercase d-flex flex-column should-animate from-y dl-1"
+        data-scroll
+        data-scroll-direction="vertical"
+        data-scroll-repeat="false">
+            <span>{{section.settings.text_1}}</span>
+			<span class="d-flex justify-content-end justify-content-md-center justify-content-xl-end">{{section.settings.text_2}}</span>
+			<span>{{section.settings.text_3}}</span>
+        </h2>
+    </div>
+    <!-- END :: HEADLINE -->
+
+    <!-- BOTTOM TEXT AND IMAGE -->
+    <div class="d-md-flex">
+    	<div class="col-md-7 pb-2 pb-md-6">
+	    	<div 
+	    	class="content h6 text-uppercase ps-1 pe-1 pe-xl-0 ps-xl-6 col-xl-8 should-animate from-y dl-1"
+	    	data-scroll
+	        data-scroll-direction="vertical"
+	        data-scroll-repeat="false">
+	    		{{section.settings.text_4}}
+	    	</div>
+
+			<div class="content h6 text-uppercase ps-1 pe-1 pe-xl-0 ps-xl-6 col-xl-8">
+				{{section.settings.text_5}}
+			</div>
+
+			<div class="content h6 text-uppercase ps-1 pe-1 pe-xl-0 ps-xl-6 col-xl-8">
+				{{section.settings.text_6}}
+			</div>
+
+			<div class="content h6 text-uppercase ps-1 pe-1 pe-xl-0 ps-xl-6 col-xl-8">
+			{{section.settings.text_7}}
+			</div>
+    	</div>
+
+		<div class="col-md-5 ps-1 ps-xl-2 pe-1 pe-md-0">
+		
+			<!-- IMAGE WITH CAPTION -->
+	        <div class="position-relative z-1 down-image">
+			{% assign image1 = section.settings.image_2 | img_url: 'master' %}
+	            {% 
+	                render 'image-with-caption' 
+	                src: image2
+	                alt: 'Seneca'
+	                caption: section.settings.image_2_cap
+	                paddedCaption: false
+	                proportion: 1.5
+		            proportionMd: 1.1
+		            proportionLg: 1.1
+		            mobileCaptionNone: true
+	            %}
+	        </div>
+	        <!-- END :: IMAGE WITH CAPTION -->
+
+		</div>
+    </div>
+    <!-- END :: BOTTOM TEXT AND IMAGE -->
+
+</section>
+{% schema %}
+{
+  "name": "Details Middle",
+  "tag": "section",
+  "settings": [
+	{
+        "id": "image_1",
+        "type": "image_picker",
+        "label": "Image 1"
+    },
+	{
+      "id": "text_1",
+      "type": "text",
+      "label": "Headline 1st row",
+      "default":"“I don't"
+    },
+	{
+      "id": "text_2",
+      "type": "text",
+      "label": "Headline 2nd row",
+      "default": "necessarily"
+    },
+	{
+      "id": "text_3",
+      "type": "text",
+      "label": "Headline 3rd row",
+	  "default":"consider myself an activist, but I want to advocate for these social changes."
+    },
+	{
+      "id": "text_4",
+      "type": "text",
+      "label": "Text 1st row",
+      "default":"My whole life, I thought, 'Hey, I've experienced racism myself,' and I've just accepted it as part of the world that we live in."
+    },
+	{
+      "id": "text_5",
+      "type": "text",
+      "label": "Text 2nd row",
+      "default": "In March, my Asian-American friends were posting horrific stories about elderly people getting beat up and getting killed, and I was furious. I was angry, but I also felt like what could I do? I’ve never talked about social causes or politics, with the fear of ‘what happens if I make a mistake, what happens if I say the wrong thing?’ But I knew at a certain point that if I look back and remember not having done anything, I will regret that moment."
+    },
+	{
+      "id": "text_6",
+      "type": "text",
+      "label": "Text 3rd row",
+	  "default":"I decided to share a personal statement of how I've experienced this, joining my Asian American friends in breaking the generational cycle of what we were taught to do which was; stay quiet, don't raise any trouble, and don‘t speak out. It shocked me to see the power in being vulnerable and doing something that came from the heart."
+    },
+	{
+      "id": "text_7",
+      "type": "text",
+      "label": "Text 4th row",
+	  "default":"Feeling empowered, I launched a collection to bring more awareness to these issues –– ‘Nothing Changes If Nothing Changes’ –– more than that, donate the proceeds to support the organizations that are making the real impact."
+    },
+    {
+        "id": "image_2",
+        "type": "image_picker",
+        "label": "Image 1"
+    },
+	{
+      "id": "image_2_cap",
+      "type": "text",
+      "label": "Image caption",
+	  "default":"Tim wears the Modena Shirt in Navy, over the Modena Shirt in Light Blue and the Vanta Pant in Navy Pin Dot."
+    }
+  ]
+}
+{% endschema %}

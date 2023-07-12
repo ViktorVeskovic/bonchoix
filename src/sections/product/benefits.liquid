@@ -1,0 +1,46 @@
+<div class='pt-5'>
+  {% for block in section.blocks %}
+
+  {% assign image1 = block.settings.image1 | img_url:"640x" %}
+  {% assign image2 = block.settings.image2 | img_url:"640x" %}
+
+   {% 
+    render 'benefit' 
+    caption: block.settings.caption
+    image1: image1
+    image2: image2
+   %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product Benefits",
+  "class": "product-benefits",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "name": "Benefit",
+      "type": "accordion",
+      "settings": [
+        {
+          "id": "caption",
+          "type": "text",
+          "label": "Caption"
+        },
+        {
+          "type": "image_picker",
+          "id": "image1",
+          "label": "Image1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image2",
+          "label": "Image2"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

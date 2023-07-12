@@ -1,0 +1,15 @@
+.red-quote {
+    height:35rem;
+    margin-top:0rem;
+    @include respond-to(md) {
+        height:50rem;
+        margin-top:4rem;
+    }
+    @include respond-to(lg) {
+        height:40rem;
+        margin-top:10rem;
+    }
+    .quote-title {
+        width:70vw;
+    }
+}

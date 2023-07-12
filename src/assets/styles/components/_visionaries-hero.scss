@@ -1,0 +1,30 @@
+.visionaries-hero {
+    &-image {
+        margin-bottom:.5rem;
+        @include respond-to(lg) {
+            margin-bottom: 1rem;
+        }
+        .simple-image {
+            height:33.5rem;
+            @include respond-to(md) {
+                height:40.5rem;
+            }
+            @include respond-to(lg) {
+                height:53.5rem;
+            }
+            img {
+                height:100%;
+                object-fit: cover;
+            }
+        }
+    }
+    &-text {
+        margin:0 .8rem;
+        @include respond-to(md) {
+            margin:0 1.6rem;
+        }
+        @include respond-to(lg) {
+            margin:0 1rem;
+        }
+    }
+}

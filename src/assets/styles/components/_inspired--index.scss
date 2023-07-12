@@ -1,0 +1,201 @@
+.inspired--index {
+    .visionaries-card-text {
+        @include respond-to(md) {
+            margin-left: 4.2rem;
+        }
+        @include respond-to(lg) {
+            margin-left: 8.4rem;
+        }
+    }
+    .description {
+        max-width: 100%;
+        margin:.6rem 0;
+        @include respond-to(md) {
+            max-width: 17rem;
+        }
+        @include respond-to(lg) {
+            max-width: 22.5rem;
+            margin:1rem 0;
+        }
+    }
+    .btn {
+        max-width: 100%;
+        @include respond-to(md) {
+            max-width: 100%;
+        }
+        @include respond-to(lg) {
+            max-width: 9.3rem;
+        }
+        span {
+            svg {
+                max-width: .5rem;
+                margin-left: .5rem;
+            }
+        }
+    }
+    .big {
+        @include respond-to(lg) {
+            width:43rem;
+        }
+    }
+    .small {
+        @include respond-to(md) {
+            width:22.95rem;
+            margin-left:-3.4rem;
+        }
+        @include respond-to(lg) {
+            width:40rem;
+            margin-left:-3.3rem;
+        }
+    }
+    &__bottom {
+        flex-wrap:wrap;
+        padding: 9rem 0 6rem;
+        @include respond-to(md) {
+            flex-wrap: nowrap;
+            padding: 0 1.65rem 4rem;
+        }
+        @include respond-to(lg) {
+            padding: 0;
+        }
+        .left {
+            z-index: 999;
+            width:100%;
+            flex-wrap:wrap;
+            @include respond-to(md) {
+                flex-wrap: wrap;
+                width:17.7rem;
+            }
+            @include respond-to(lg) {
+                flex-wrap: nowrap;
+                width:36.8rem;
+                margin-top:4.55rem;
+                z-index: 999;
+            }
+            .left-image {
+                width:98%;
+                @include respond-to(md) {
+                    width:17.7rem;
+                    height:22.6rem;
+                    margin-bottom:1rem;
+                    margin-top:7.5rem;
+                }
+                @include respond-to(lg) {
+                    width:19.5rem;
+                    height: 25.7rem;
+                    margin-bottom:0;
+                    margin-top:0;
+                }
+                img {
+                    object-fit: contain;
+                    max-width: 100%;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                    margin-left: -5px;
+                }
+            }
+            .washable {
+                margin-top:1rem;
+                display:block;
+                margin-bottom:.6rem;
+                padding-left: .8rem;
+                @include respond-to(md) {
+                    display:none;
+                }
+                @include respond-to(lg) {
+                    margin-top:1.5rem;
+                    margin-bottom:5rem;
+                }
+            }
+            svg {
+                width:2.85rem;
+                margin-right:1rem;
+                @include respond-to(lg) {
+                    width:3.4rem;
+                    margin-right:1.4rem;
+                }
+            }
+        }
+        .right {
+            position: absolute;
+            z-index: 999999999;
+            right: 0;
+            top: 0;
+            width: 71.4vw;
+            height: 71.4vw;
+            @include respond-to(md) {
+                position: relative;
+                right: unset;
+                top: unset;
+                width:unset;
+                height:unset;
+            }
+            @include respond-to(lg) {
+                position: relative;
+                right: unset;
+                top: unset;
+                margin-top:-11rem;
+                width:unset;
+                height:unset;
+            }
+            svg {
+                width:2.85rem;
+                margin-right:1rem;
+                @include respond-to(lg) {
+                    width:3.4rem;
+                    margin-right:1.4rem;
+                }
+            }
+            .washable {
+                margin-top:1rem;
+                display:none;
+                @include respond-to(md) {
+                    display:block;
+                }
+                @include respond-to(lg) {
+                    margin-top:1.5rem;
+                    margin-bottom:5rem;
+                }
+            }
+            .right-image {
+                @include respond-to(md) {
+                    margin-top:2rem;
+                    width:17.15rem;
+                    height: 17.20rem;
+                }
+                @include respond-to(lg) {
+                    margin-top:0rem;
+                    width:29.7rem;
+                    height: 29.5rem;
+                }
+                img {
+                    object-fit: contain;
+                    max-width: 100%;
+                    display: block;
+                    width: 100%;
+                    height: 100%;
+                }
+            }
+        }
+        .bottomText {
+            padding: 0 .8rem;
+            padding-left: 0;
+            @include respond-to(lg) {
+                padding: 0;
+                padding-left: .8rem;
+                width:14.2rem;
+            }
+        }
+    }
+    .spacer {
+        width:100%;
+        display:none;
+        @include respond-to(lg) {
+           display:block;
+           height:4.6rem;
+           background-color: white;
+           z-index: 9;
+        }
+    }
+}

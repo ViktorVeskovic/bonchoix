@@ -1,0 +1,165 @@
+.container {
+  margin: 0 auto;
+  padding: 0 1.9rem;
+
+  @include respond-to(xs) {
+    max-width: 58rem;
+  }
+
+  @include respond-to(md) {
+    max-width: none;
+    padding: 0 4vw;
+  }
+
+  @include respond-to(lg) {
+    max-width: none;
+    padding: 0 10.8vw;
+  }
+}
+
+.container-left {
+  margin: 0 auto;
+  padding: 0 2rem;
+
+  @include respond-to(xs) {
+    max-width: 58rem;
+  }
+
+  @include respond-to(md) {
+    padding: 0;
+    padding-left: 4vw !important;
+    max-width: none !important;
+  }
+
+  @include respond-to(lg) {
+    padding-left: 20rem !important;
+  }
+}
+
+.d-none-1 {
+  display: none !important;
+
+  @include respond-to(md) {
+    display: flex !important;
+  }
+}
+
+.d-none-2 {
+  display: none !important;
+
+  @include respond-to(lg) {
+    display: flex !important;
+  }
+}
+
+.d-none-md {
+  @include respond-to(md) {
+    display: none !important;
+  }
+}
+
+.d-none-lg {
+  @include respond-to(lg) {
+    display: none !important;
+  }
+}
+
+.mb-3 {
+  margin-bottom: 3rem;
+
+  @include respond-to(xlg) {
+    margin-bottom: 6.4rem;
+  }
+}
+
+.mb-1-to-sm {
+  margin-bottom: 1rem;
+  @include respond-to(sm) {
+    margin-bottom: 0rem;
+  }
+}
+
+.slick-disabled {
+  display: none !important;
+}
+
+.font-size-4 {
+  font-size: 3rem;
+}
+
+.ml-auto {
+  @include respond-to(md) {
+    margin-left: auto;
+  }
+}
+
+.mr-auto {
+  @include respond-to(md) {
+    margin-right: auto;
+  }
+}
+
+.ml-3-lg {
+  @include respond-to(lg) {
+    margin-left: 3rem;
+  }
+}
+
+.mlr-auto {
+  @include respond-to(md) {
+    margin: 0 auto;
+  }
+}
+
+.align-end {
+  @include respond-to(lg) {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    margin-bottom: 8rem;
+  }
+}
+
+.max-width-lg-33 {
+  @include respond-to(lg) {
+    max-width: 33rem;
+  }
+}
+
+.max-width-lg-34 {
+  @include respond-to(lg) {
+    max-width: 34rem;
+  }
+}
+
+.max-width-lg-36 {
+  @include respond-to(lg) {
+    max-width: 36rem;
+  }
+}
+
+.max-width-lg-38 {
+  @include respond-to(lg) {
+    max-width: 38rem;
+  }
+}
+
+.max-width-lg-40 {
+  @include respond-to(lg) {
+    max-width: 40rem;
+  }
+}
+
+.max-width-lg-42 {
+  @include respond-to(lg) {
+    max-width: 42rem;
+  }
+}
+
+.pt0 {
+  padding-top: 0;
+}
+
+.pb0 {
+  padding-bottom: 0;
+}

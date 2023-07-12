@@ -1,0 +1,7 @@
+.details-image-caption {
+	.fw-image {
+		@include media-breakpoint-up(md) {
+			margin-top: -3rem;
+		}
+	}
+}

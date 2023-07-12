@@ -1,0 +1,58 @@
+<section>
+    <div class="img_left-container bg-lightBaige">
+        <div class="img_box-left">
+            {% comment %} <img class="img-left" src="{{ section.settings.image | img_url: '2000x' }}"> {% endcomment %}
+            <div data-scroll class='should-animate dl-1'>
+            {% assign detailsImage = section.settings.image | img_url: '2000x' %}
+            {% 
+                render 'parallax-image' 
+                src: detailsImage
+                proportion: 1.28
+                proportionMd: 2.58
+                proportionLg: 1.29
+                imgClass: 'img-left'
+                alt: 'Seneca'
+            %}
+    </div>
+        </div>
+        <div
+        data-scroll
+        data-scroll-direction="vertical"
+        data-scroll-repeat="false"
+        class="img_box-right from-y should-animate dl-2">
+            <h3>{{section.settings.title_text}}</h3>
+            {{section.settings.text}}
+        </div>
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Philosophy Hero",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title_text",
+      "type": "text",
+      "label": "title",
+      "default":"TO A NEW </br> BEGINNING"
+    },
+    {
+      "id": "text",
+      "type": "richtext",
+      "label": "Text"
+    },
+    {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+    }
+  ],
+    "presets": [
+        {
+        "category": "Home",
+        "name": "Image Left"
+        }
+    ]
+}
+{% endschema %}

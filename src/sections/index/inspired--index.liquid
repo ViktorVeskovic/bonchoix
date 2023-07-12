@@ -1,0 +1,178 @@
+<section class="visionaries-list inspired--index">
+    <h3
+    data-scroll
+    data-scroll-direction="vertical"
+    data-scroll-repeat="false"  class="p2 text-center visionaries-list-title should-animate from-y dl-2">{{section.settings.title_text}}</h3>
+    {% for block in section.blocks %}
+    {% assign imageLeft = block.settings.image_left | img_url: 'master' %}
+    {% assign imageRight = block.settings.image_right | img_url: 'master' %}
+    {% assign imageClassLeft = block.settings.image_class_left %}
+    {% assign imageClassRight = block.settings.image_class_right %}
+    {% assign titleLeft = block.settings.title_left %}
+    {% assign titleRight = block.settings.title_right %}
+    {% assign bottomImageLeft = block.settings.bottom_image_left | img_url: 'master' %}
+    {% assign bottomImageRight = block.settings.bottom_image_right | img_url: 'master' %}
+    {% assign bottomText = block.settings.bottom_text %}
+    <div class="visionaries-list-listing d-flex justify-content-between flex-wrap bg-lightBaige">
+        {% render 'visionaries-card' 
+        class:imageClassLeft 
+        image:imageLeft
+        title:titleLeft
+        url: block.settings.url_left 
+        description:block.settings.description_left
+        buttonText:block.settings.url_left_text %}
+        {% render 'visionaries-card' 
+        class:imageClassRight
+        image:imageRight
+        title:titleRight
+        url: block.settings.url_right
+        description:block.settings.description_right
+        buttonText:block.settings.url_right_text %}
+    </div>
+    {% endfor %}
+    <div class="inspired--index__bottom bg-lightBaige position-relative d-flex justify-content-between">
+        <div class="left d-flex justify-content-between">
+            <div class="left-image">
+                {% 
+                render 'parallax-image' 
+                src: bottomImageLeft
+                proportion: 1.31
+                imgClass: ''
+                alt: 'Seneca'
+                %}
+            </div>
+             <div
+             data-scroll
+             data-scroll-direction="vertical"
+             data-scroll-repeat="false"  class="p2 washable should-animate from-y dl-1">{% render 'machine-washable' %} MACHINE WASHABLE</div>
+            <div 
+             data-scroll
+             data-scroll-direction="vertical"
+             data-scroll-repeat="false"
+             class="h6 bottomText text-uppercase should-animate from-y dl-2">{{bottomText}}</div>
+        </div>
+        <div class="right">
+            <div class="right-image">
+                {% 
+                  render 'parallax-image' 
+                  src: bottomImageRight
+                  proportion: 1
+                  imgClass: ''
+                  alt: 'Seneca'
+                %}
+            </div>
+             <div
+             data-scroll
+             data-scroll-direction="vertical"
+             data-scroll-repeat="false" class="p2 washable should-animate from-y dl-1">{% render 'machine-washable' %} MACHINE WASHABLE</div>
+        </div>
+        <div class="spacer position-absolute bottom-0"></div>
+    </div>
+</section>
+
+
+{% schema %}
+{
+  "name": "Home Inspired",
+  "max_blocks": 1,
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title_text",
+      "type": "textarea",
+      "label": "Title",
+      "default":"INSPIRED BY THOSE MOVING THE WORLD FORWARD"
+    }
+  ],
+  "blocks": [
+      {
+        "type": "text",
+        "name": "Visionaries block",
+        "settings": [
+          {
+            "type": "url",
+            "id": "url_left",
+            "label": "First Image url"
+          },    
+          {
+            "type": "text",
+            "id": "url_left_text",
+            "label": "First Button text"
+          },         
+          {
+            "type": "image_picker",
+            "id": "image_left",
+            "label": "First Image"
+          },
+          {
+            "id": "image_class_left",
+            "type": "text",
+            "label": "small/big"
+          },
+          {
+            "id": "title_left",
+            "type": "textarea",
+            "label": "First Title"
+          },
+          {
+            "id": "description_left",
+            "type": "textarea",
+            "label": "Description Left"
+          },
+          {
+            "type": "url",
+            "id": "url_right",
+            "label": "Second Image url"
+          }, 
+          {
+            "type": "text",
+            "id": "url_right_text",
+            "label": "Second Button text"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "image_right",
+            "label": "Second Image"
+          },
+          {
+            "id": "image_class_right",
+            "type": "text",
+            "label": "small/big"
+          },
+          {
+            "id": "title_right",
+            "type": "textarea",
+            "label": "Second Title"
+          },
+          {
+            "id": "description_right",
+            "type": "textarea",
+            "label": "Description Right"
+          },
+          {
+            "type": "image_picker",
+            "id": "bottom_image_left",
+            "label": "Bottom Image Left"
+          }, 
+          {
+            "type": "image_picker",
+            "id": "bottom_image_right",
+            "label": "Bottom Image Right"
+          },
+          {
+            "id": "bottom_text",
+            "type": "textarea",
+            "label": "Bottom text",
+            "default":"Designed for those who defy limits and change the world. We listened, and decided to take a risk, to build better than before."
+          }
+        ]
+      }
+    ],
+      "presets": [
+        {
+          "category": "Home",
+          "name": "Home Inspired"
+        }
+      ]
+}
+{% endschema %}

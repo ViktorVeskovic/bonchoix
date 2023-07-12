@@ -1,0 +1,143 @@
+.lifo-cart {
+    padding: 2.2rem 1rem;
+    @include respond-to(md) {
+        padding: 4.7rem 4.5rem 6rem;
+    }
+    @include respond-to(lg) {
+        padding: 4.7rem 6rem 6rem;
+    }
+.my-cart {
+    margin-top: -0.7rem;
+    width: 6.5rem ;
+}
+.lifo-list {
+    padding-top: 2.3rem;
+    li {
+        margin-bottom:1.5rem;
+    };
+}
+.lifo-img {
+    width: 4.5rem;
+    height: 6.5rem;
+    object-fit: cover;
+    @include respond-to(md) {
+        height: 4.5rem;
+        width: 4.5rem;
+    }
+}
+.lifo-basket {
+    padding-left: 2rem;
+    margin-bottom:.1rem;
+    margin-left:1rem;
+}
+.product-title {
+    font-weight: bold;
+    width:100%;
+    padding: 1rem; 
+    padding-left: .8rem;
+    padding-top:0;
+    padding-bottom: 0rem;
+    @include respond-to(md) {
+        width: 7.4rem;
+        padding-top:1rem;
+        padding-bottom: 1rem;
+    }
+}
+.mobile-price {
+    font-weight: bold;
+    margin-bottom:.5rem;
+}
+.options {
+    padding: 0 0.8rem;
+    padding-right: 0rem;
+    @include respond-to(md) {
+        padding-right: .8rem;
+    }
+}
+.lifo-option-name {
+    text-align: left;
+    @include respond-to(md) {
+        text-transform: uppercase;
+        color: #A8A795;
+        padding-bottom: 1.4rem;
+    }
+            
+}
+.lifo-option-value {
+    text-align: left;
+}
+.lifo-qty {
+    padding: 0 0.2rem;
+}
+
+.lifo-list {
+    .wl-list-options {
+        @include respond-to(md) {
+            width:31rem;
+        }
+        @include respond-to(lg) {
+            width:unset;
+        }
+    }
+}
+.lifo-cart-wrap {
+    @include respond-to(md) {
+        width:33.33rem;
+    }
+    @include respond-to(lg) {
+        width:38.4rem;
+    }
+}
+.lifo-summary {
+    padding: 1.5rem;
+    height: 40vw;
+    @include respond-to(md) {
+        width: 13.62rem;
+        height: 10.1rem;
+    }
+    @include respond-to(lg) {
+        width: 15.7rem;
+        height: 10.1rem;
+    }
+}
+
+
+.lifo-line {
+    padding-right: 1.2rem;
+}
+.button-lifo {
+    width:100%;
+    height:2.1rem;
+    letter-spacing: 0.4rem;
+    border: none;
+    margin-top: 0.5rem;
+    @include respond-to(md) {
+        width:100%;
+        height:2.4rem;
+    }
+}
+
+}
+
+.pc {
+    min-width: 2.6rem;
+}
+.discount-price {
+    text-decoration: line-through;
+}
+.social a {
+    margin-right:.5rem;
+}
+#cart.hide {
+    opacity: 0;
+    -webkit-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}
+
+#cart.hide.loaded {
+    opacity: 1;
+    -webkit-transition: all .5s ease-in;
+    -o-transition: all .5s ease-in;
+    transition: all .5s ease-in;
+}

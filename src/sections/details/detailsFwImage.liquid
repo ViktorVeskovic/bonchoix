@@ -1,0 +1,37 @@
+<section class="detail-fw-image bg-lightBaige">
+    <!-- IMAGE WITH CAPTION -->
+    <div>
+    {% assign detailsImage = section.settings.image | img_url: 'master' %}
+        {% 
+            render 'image-with-caption' 
+            src: detailsImage
+            alt: 'Seneca'
+            caption: section.settings.imageCaption
+            paddedCaption: true
+            proportion: 1.35
+            proportionMd: 0.595
+            proportionLg: 0.55
+        %}
+    </div>
+    <!-- END :: IMAGE WITH CAPTION -->
+</section>
+
+{% schema %}
+{
+  "name": "Details Text and image",
+  "tag": "section",
+  "settings": [
+    {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image 1"
+    },
+     {
+        "id": "imageCaption",
+        "type": "text",
+        "label": "Image 1 Caption",
+        "default": "Tim wears the Forma Jacket in Black and the Vanta Pant in Herringbone."
+    }
+  ]
+}
+{% endschema %}

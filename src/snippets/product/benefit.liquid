@@ -1,0 +1,26 @@
+<div class="benefit pb-3 pb-md-4 pb-xl-5">
+	<div 
+	class="px-1 px-xl-2 pl-1 pb-1 pl-xl-2 pb-xl-2 should-animate from-y dl-1"
+	data-scroll
+    data-scroll-direction="vertical"
+    data-scroll-repeat="false">
+		<h4 class="p1 text-uppercase pe-xl-3">{{caption}}</h4>
+	</div>
+	<div class='row'>
+		<div class='col-6'>
+			{% 
+				render 'proportion-image' 
+				proportion: 1.5
+				src: image1 | img_url:"640x"
+			%}
+		</div>
+
+		<div class='col-6'>
+			{% 
+				render 'proportion-image' 
+				proportion: 1.5
+				src: image2 | img_url:"640x"
+			%}
+		</div>
+	</div>
+</div>

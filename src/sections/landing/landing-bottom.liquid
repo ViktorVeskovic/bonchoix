@@ -1,0 +1,72 @@
+<section class="landing-bottom bg-lightBaige pb-2 pb-md-0">
+    <!-- HEADLINE -->
+    <h2 
+    class="text-uppercase headline font-bold px-1 px-xl-2 lh-95 pt-1 pt-xl-0 should-animate dl-1"
+    data-scroll
+    data-scroll-direction="vertical"
+    data-scroll-repeat="false">
+        <span>{{section.settings.text_1}}</span>
+        <div class="d-flex flex-column flex-md-row flex-xl-column justify-content-between">
+            <span class="ps-md-2 ps-xl-0">{{section.settings.text_2}}</span>
+            <span class="d-flex justify-content-end">{{section.settings.text_3}}</span>
+        </div>
+    </h2>
+    <!-- END ::HEADLINE -->
+
+    <!-- ACCORDIONS -->
+    <div class="offset-xl-7 py-2 py-md-3 py-xl-6 ps-1 pe-1 ps-md-2 ps-xl-0 pe-md-2">
+        {% render 'accordion-items' items: section.blocks %}
+    </div>
+    <!-- END :: ACCORDIONS -->
+
+</section>
+
+{% schema %}
+{
+  "name": "Landing Bottom",
+  "settings": [
+    {
+        "id": "text_1",
+        "type": "text",
+        "label": "1st row",
+        "default": "FOR EVERY"
+    },
+    {
+        "id": "text_2",
+        "type": "text",
+        "label": "2nd row",
+        "default": "STEP OF THE"
+    },
+    {
+        "id": "text_3",
+        "type": "text",
+        "label": "3rd row",
+        "default": "JOURNEY"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Accordion",
+      "type": "accordion",
+      "settings": [
+        {
+          "id": "title",
+          "type": "text",
+          "label": "Acc title"
+        },
+        {
+          "id": "content",
+          "type": "textarea",
+          "label": "Acc content"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "category": "Landing",
+      "name": "Landing Bottom"
+    }
+  ]
+}
+{% endschema %}

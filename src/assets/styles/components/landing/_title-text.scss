@@ -1,0 +1,10 @@
+.title-text {
+    .content {
+        @include media-breakpoint-up(md) {
+            // width: 42vw;
+        }
+        @include media-breakpoint-up(xl) {
+            width: 34vw;
+        }
+    }
+}

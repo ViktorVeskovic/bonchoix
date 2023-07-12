@@ -1,0 +1,5 @@
+.sticky-section{
+    @include media-breakpoint-down(md) {
+        transform: none!important
+    }
+}

@@ -1,0 +1,101 @@
+{% schema %}
+  {
+  "name": "Shop page",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "title",
+      "type": "text",
+      "label": "Title",
+      "default":"Headline goes here"
+    }
+  ],
+    "blocks": [
+      {
+        "type": "collection",
+        "name": "Collection",
+        "settings": [
+          {
+            "id": "title",
+            "type": "text",
+            "label": "Collection Title"
+          },
+          {
+            "id": "collection",
+            "type": "collection",
+            "label": "Collection"
+          }
+        ]
+      }
+    ]
+  }
+{% endschema %}
+<h1 class="h1 color-black text-center font-lora">{{section.settings.title}}</h1>
+<div class="filter-position d-flex justify-content-end flex-wrap position-relative">
+    <div class="filter-start section-1 font-sans d-flex justify-content-start align-items-center position-relative">Filter <span class="f-icon">{% render 'filter'%}</span></div>
+    <ul class="filter-holder section-1">
+    <li class="filter font-sans button-1" data-filter="all">All</li>
+    {% for block in section.blocks %}
+      <li class="filter font-sans button-1" data-filter="{{ block.settings.title | handleize }}">{{ block.settings.title }}</li>
+    {% endfor %}
+    </ul>
+</div>
+
+{% for block in section.blocks %}
+{% assign handle_col = block.settings.collection %}
+<div class="collection-cards {{ block.settings.title | handleize }}">
+    <div class="collection-title d-flex align-items-center justify-content-between">
+        <h3 class="h3 font-lora flex-shrink-0">{{ block.settings.title }}</h3>
+        {% render 'line' %}
+    </div>
+    <div class="product-cards d-flex justify-content-between flex-wrap">
+
+    {% for product in collections[handle_col].products %}
+            <div class="product-card d-block font-sans box position-relative">
+                <a href="{{ product.url }}" ><div class="product-image" style="background:url({{ product.images[0].src | img_url: '2048x'}}) no-repeat center center; 
+                -webkit-background-size: cover;
+                -moz-background-size: cover;
+                -o-background-size: cover;
+                background-size: cover;">
+                {% if tag contains 'bestseller' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'finalsale' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-final-sale' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'limitededition' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-limited' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'new' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-new' %}
+                        </div>
+                    {% endif %}
+                    {% if tag contains 'onsale' %}
+                        <div class="position-absolute fp-badge-holder">
+                            {% render 'badge-on-sale' %}
+                        </div>
+                    {% endif %}
+                </div>
+                </a>
+                <a data-mh="title-3" href="{{ product.url }}" class="d-block h5 w-100 text-center product-title color-black">
+                {{ product.title }}
+                </a>
+                <h5 class="h5 w-100 text-center product-price color-black">{{ product.first_available_variant.price | money }}</h5>
+                <div class="stars text-center">
+                    {% render 'stars' %}
+                </div>
+                <button data-quantity="1" data-variant-id="{{product.first_available_variant.id}}" class="cta atc-button margin-0-auto hero-button color-white bg-black button-big button-1 d-flex justify-content-center flex-column align-items-center font-sans" href="#">Add To Cart</button>
+            </div>
+    {% endfor %}
+   
+
+    </div>
+</div>
+{% endfor %}

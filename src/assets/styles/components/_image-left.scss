@@ -1,0 +1,74 @@
+.img_left-container {
+    display: flex;
+    flex-direction: column;
+    @include respond-to (md) {
+        flex-direction: row;
+    }
+    @include respond-to (lg) {
+        padding: 0rem;
+    }
+}
+.img_box-left {
+    @include respond-to (lg) {
+        width: 46vw;
+        margin-top:-7.5rem;
+    }
+}
+.img-left {
+    width: 100%;
+    object-fit: cover;
+    padding: 0rem 0.8rem;
+    margin-top: -7.7rem;
+    @include respond-to (md) {
+        padding: 0rem;
+        width: 35,2rem;
+        height: 45.5rem;
+        object-position: 100% 100%;
+        margin-top: -15.6rem;
+    }
+    @include respond-to (lg) {
+        width: 37rem;
+        height: 47.9rem;
+        object-position: 0;
+        margin-top: -7.5rem;
+    }
+
+}
+.img_box-right{
+    padding: 2rem 0.8rem 3rem 0.8rem;
+    @include respond-to (md) {
+        width: 100%;
+        padding: 2rem 1.6rem 3rem 0.8rem;
+    }
+    @include respond-to (lg) {
+        width: 54vw;
+        padding: 10.7rem 10rem 9.7rem 11.1rem;
+    }
+    h3 { 
+        font-weight: 600;
+        font-size: 1.8rem;
+        line-height: 100%;
+        text-transform: uppercase;
+        color: #000000;
+        padding-bottom: 0.8rem;
+        @include respond-to (lg) {
+            font-size: 3rem;
+            padding-bottom: 2rem;
+        }
+    }
+    p {
+        font-weight: 600;
+        font-size: 0.8rem;
+        line-height: 120%;
+        letter-spacing: -0.01em;
+        text-transform: uppercase;
+        color: #000000;
+        padding-bottom: 1rem;
+        padding-right: 0.7rem;
+        @include respond-to (lg) {
+            padding-right: 0rem;
+            font-size: 0.9rem;  
+        }
+
+    }
+}

@@ -1,0 +1,181 @@
+<header class="site-header header {% if template == 'index' or template.suffix == 'transparent-header' %} header--transparent {% endif %} {% if page.handle == "philosophy" %}black{% endif %}">
+  <div class="">
+    <div class="header__container">
+      <nav class="header__nav">
+        <ul class="header__nav-list">
+          <li class="header__list-item header__list-item--has-submenu">
+            <a href="/collections/all" aria-expanded="false" class="header__link-with-submenu">Shop</a>
+            <div class="header__submenu">
+              <ul class="header__submenu-list"> 
+                {% for link in linklists[section.settings.submenu].links %}
+                  <li class="header__submenu-list-item header__submenu-list-item--has-image"><a href="{{ link.url }}">{{ link.title }}</a></li>
+                {% endfor %}
+                <li class="header__submenu-list-item"><a href="/collections/all">Shop All</a></li>
+              </ul>
+              <div class="header__submenu-img-wrapper">
+                {% for image in section.blocks %}
+                  <img class="header__submenu-img {% if forloop.first %}header__submenu-img--active{% endif %}" src="{{ image.settings.img | img_url: "300x" }}" alt="{{ image.settings.alt }}">
+                {% endfor %}
+              </div> 
+            </div>
+          </li>
+          {% for link in linklists[section.settings.menu].links %}
+            <li class="header__list-item"><a href="{{ link.url }}">{{ link.title }}</a></li>
+          {% endfor %}
+        </ul>
+      </nav>
+
+      {% if template.suffix == "promo" or page.handle == "atlas-pant-landing" or page.handle == "vanta-pant" %}
+        <div class="header__sticky-button">
+          <button class="button button-default invert outline"><span>Shop Now</span></button>
+        </div>
+      {% endif %}
+
+      <div class="header__logo">
+        <a href="{{ shop.url }}">
+        <div id="small-logo" class="logo-header">
+          <svg viewBox="0 0 1568 249" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M200.731 48.9536C192.807 59.7754 179.745 65.4461 170.13 74.5721C155.782 59.2561 139.816 41.1737 113.842 37.9727C85.1555 34.4538 52.0867 45.0954 51.3847 67.2373C50.5657 93.9157 85.666 95.9826 107.715 100.18C152.686 108.744 201.072 115.793 206.847 162.387C214.995 228.071 153.186 255.3 90.5907 247.786C47.5343 242.592 13.4977 216.677 0 181.911C7.79652 171.397 22.2727 167.528 31.8136 158.73C42.3756 191.302 92.5584 230.721 144.422 206.289C156.026 200.841 170.492 186.755 164.014 166.054C158.185 147.347 128.573 144.125 102.801 139.217C55.5117 130.208 1.28701 121.548 11.0087 57.486C16.2631 22.7521 54.565 1.48998 97.9192 0.165068C148.113 -1.39303 175.438 18.5972 200.731 48.9536Z"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M1303.6 87.9918C1292.2 90.8324 1275.49 88.4052 1261.97 89.2001C1249.31 64.1434 1232.03 43.1462 1200.77 39.1927C1072.39 22.997 1073.4 222.158 1198.35 208.749C1227.26 205.644 1251.1 185.972 1260.75 158.731H1303.6C1288.33 215.151 1246.21 248.91 1187.33 248.995C1120.78 249.101 1061.67 199.369 1061.23 125.789C1060.9 60.9742 1107.27 3.37772 1179.98 0.166139C1248.7 -2.87586 1286.53 36.2143 1303.6 87.9918Z"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M457.782 5.05007V41.6388H331.73V100.179C363.139 103.03 399.835 100.592 433.297 101.398V136.789H331.73V206.288C371.691 209.139 416.981 206.723 459.016 207.539V244.117H290.088C290.907 164.834 288.45 82.3083 291.311 5.05007H457.782Z"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M587.528 5.05007C622.565 62.0212 656.229 120.381 691.595 177.034V5.05007H733.184V244.117H689.16C653.262 185.927 619.055 126.105 582.635 68.4762C579.774 124.589 582.242 185.969 581.412 244.117H541.026C541.845 164.834 539.409 82.3083 542.249 5.05007H587.528Z"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M996.394 5.05007V41.6388H870.298V100.179C901.729 103.03 938.436 100.592 971.919 101.398V136.789H870.298V206.288C910.281 209.139 955.592 206.723 997.574 207.539V244.117H828.657C829.497 164.834 827.061 82.3083 829.933 5.05007H996.394Z"></path>
+          <path fill-rule="evenodd" clip-rule="evenodd" d="M1424.8 147.757H1494.57C1482.7 113.648 1472.99 77.3671 1459.08 45.2937C1447.4 79.2114 1435.94 113.352 1424.8 147.757ZM1485.98 5.04817C1514.07 83.5995 1539.75 164.525 1568 242.917C1556.99 245.726 1540.69 243.299 1527.61 244.115C1520.22 224.634 1514.71 203.318 1506.8 184.346H1413.79C1404.34 202.195 1399.43 224.538 1391.75 244.115H1351.37C1379.86 165.193 1404.53 82.423 1434.57 5.04817H1485.98Z"></path>
+          </svg>
+        </div>
+      </a>
+      </div>
+
+      <div class="header__icons-and-date">
+        <ul class="header__icons">
+          <li class="header__icon">
+            <button class="header__search-btn search ui-open-search">
+              <svg viewBox="0 0 19 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M14.9574 8.2756C14.9574 11.9777 11.9777 14.9574 8.2756 14.9574C4.57349 14.9574 1.59375 11.9777 1.59375 8.2756C1.59375 4.57349 4.57349 1.59375 8.2756 1.59375C11.9777 1.59375 14.9574 4.66379 14.9574 8.2756Z" stroke-width="2.143" stroke-miterlimit="10" stroke-linejoin="round"/>
+                <path d="M12.7903 12.6099L17.305 17.1246" stroke-width="2.143" stroke-miterlimit="10" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </li>
+          <li class="header__icon">
+            <a href="/account">
+              <svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M15.9715 8.01822C15.9715 10.4562 13.985 12.4427 11.547 12.4427C9.10905 12.4427 7.12256 10.4562 7.12256 8.01822C7.12256 5.58024 9.10905 3.59375 11.547 3.59375C13.985 3.59375 15.9715 5.58024 15.9715 8.01822Z" stroke-width="2.143" stroke-miterlimit="10" stroke-linejoin="round"/>
+                <path d="M14.8879 10.998C14.0752 11.901 12.9014 12.4427 11.6372 12.4427C10.2828 12.4427 9.10898 11.8107 8.38661 10.9077C4.77481 11.5398 2.15625 13.2554 2.15625 15.2419C2.15625 17.7701 6.40012 19.8469 11.6372 19.8469C16.8744 19.8469 21.1182 17.7701 21.1182 15.2419C20.9377 13.3457 18.4094 11.6301 14.8879 10.998Z" stroke-width="2.143" stroke-miterlimit="10" stroke-linejoin="round"/>
+              </svg>
+            </a>
+          </li>
+          <li class="ui-sidebar-cart-toggle header__icon cart-toggle">
+            <a href="#">
+              <svg viewBox="0 0 23 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M19.0342 16.8707C19.0342 18.496 17.6798 19.8505 16.0545 19.8505H6.57349C4.94817 19.8505 3.59375 18.496 3.59375 16.8707V9.37623C3.59375 7.75091 4.94817 6.39648 6.57349 6.39648H16.0545C17.6798 6.39648 19.0342 7.75091 19.0342 9.37623V16.8707Z" stroke-width="2.143" stroke-miterlimit="10" stroke-linejoin="round"/>
+                <path d="M8.37909 6.39651C8.37909 6.39651 8.10821 2.875 9.64323 2.875H13.9774C13.9774 2.875 15.0609 3.14589 15.0609 6.39651" stroke-width="2.143" stroke-miterlimit="10" stroke-linejoin="round"/>
+              </svg>  
+            </a>
+            <div class="counter"></div>
+          </li>
+        </ul>
+        <div class="header__date">
+          <span>New York, NY</span>
+          <span class="header__ny-time">9:32 AM</span>
+        </div>
+      </div>
+
+      <div class="header__hamburger">
+        <svg viewBox="0 0 100 80">
+          <rect width="100" height="15"></rect>
+          <rect y="30" width="100" height="15"></rect>
+          <rect y="60" width="100" height="15"></rect>
+        </svg>
+      </div>
+    </div>
+  </div>
+</header>
+<div class="search-lightbox d-none">
+    <div class="search-lightbox-inner">
+      <div class="container">
+        <div class="search-lightbox-header ">
+          <a href="/" class="brand desktop-only" aria-label="Haerfest">
+           <img src="//cdn.shopify.com/s/files/1/0511/7974/9539/products/SenecaAeroGreyMainLo7_42f81af7-aa19-46b5-93c7-a938cb705535.jpg?v=1634065061">
+
+          </a>
+          <h5 class="title mobile-only">Search</h5>
+          <a href="#!" class="search-lightbox-close ui-close-search" aria-label="Search"></a>
+        </div>
+        <div class="search-lightbox-input-container">
+          <form role="search" method="get" id="searchform" class="searchform" action="/search">
+            <div class="search-wrap"><input type="text" aria-label="Search" placeholder="Search product or category" value="" autocomplete="off" data-placeholder="Search" name="q" id="bc-sf-search-box-0" class="ui-search ui-autocomplete-input bc-sf-search-box" data-search-box="#bc-sf-search-box-0"><i class="fa fa-search search-icon"></i><input type="submit" id="searchsubmit" value="Search"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+{% if template == 'index' and section.settings.show-bar and section.settings.show-bar != '' %}
+  <section class="announcement-bar">
+    <div class="container">
+      <p>{{ section.settings.bar-text }}</p>
+      <button class="announcement-bar__close">
+        <img src="https://cdn.shopify.com/s/files/1/0511/7974/9539/files/close.svg?v=1619559083" alt="Close button">
+      </button>
+    </div>
+  </section>
+{% endif %}
+
+{% 
+  render 'fullscreen-menu' 
+  items:linklists[section.settings.menu].links
+%}
+
+{% schema %}
+  {
+    "name": "Header",
+    "settings": [
+      {
+        "type": "header",
+        "content": "Header"
+      },
+      {
+        "type": "link_list",
+        "id": "menu",
+        "label": "Menu",
+        "default": "main-menu"
+      },
+      {
+        "type": "link_list",
+        "id": "submenu",
+        "label": "Submenu"
+      },
+      {
+        "id": "show-bar",
+        "type": "checkbox",
+        "label": "Show the announcement bar?",
+        "default": false
+      },
+      {
+        "id": "bar-text",
+        "type": "text",
+        "label": "Announcement bar text"
+      }
+    ],
+    "blocks": [
+      {
+        "type": "images",
+        "name": "Hover Images",
+        "settings": [
+          {
+            "id": "img",
+            "type": "image_picker",
+            "label": "Choose image"
+          },
+          {
+            "id": "alt",
+            "type": "text",
+            "label": "Image alt"
+          }
+        ]
+      }
+    ]
+  }
+  
+{% endschema %}

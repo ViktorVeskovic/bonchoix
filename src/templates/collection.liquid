@@ -1,0 +1,88 @@
+
+<div id="wrapper" data-scroll-container  data-router-view="collection">
+<div class="collection-page">
+<section class="product-listing-wrapper row">
+    {% assign colHandle = collection.handle %}
+    {% assign counter = 1 %}
+    {% for product in collections[colHandle]products %}
+
+        {% comment %} list all color tags {% endcomment %}
+        {% capture color %}
+            {% for t in product.tags %}
+                {% if t contains 'color:' %}  
+                    {{ t | remove: "color:"}}    
+                {% endif %}
+            {% endfor %}
+        {% endcapture %}
+        {% comment %} end of list all color tags {% endcomment %}
+
+
+        {% comment %} list all product sizes {% endcomment %}
+       {% capture options %}
+            {% for o in product.options_by_name['Size'].values %} {{o}} {% endfor %}
+        {% endcapture %}
+        {% comment %} end of list all product sizes {% endcomment %}
+
+        {% comment %} list all type tags {% endcomment %}
+        {% capture type %}
+            {% for type in product.tags %}
+                {% if type contains 'type:' %}  
+                    {{ type | remove: "type:"}}    
+                {% endif %}
+            {% endfor %}
+        {% endcapture %}
+        {% comment %} end of list all color tags {% endcomment %}
+        
+        {% assign price = product.first_available_variant.price | money %}
+        {% assign image = product.images[0].src | img_url: 'master' %}
+
+        <!-- REGULAR CARDS -->
+        <div class='col-md-4 px-small py-1 should-animate dl-1' data-scroll>
+            {% render 'product-card' 
+                title: product.title
+                price: price
+                image: image
+                url: product.url
+                color: color
+                options:options
+                type:type
+            %}
+        </div>
+        <!-- END :: REGULAR CARDS -->
+
+        <!-- COLLECTION CARD -->
+        {% if counter == 4 %}
+            <div class='col-md-8 px-small py-1 should-animate dl-1' data-scroll>
+                {% render 
+                'collection-widget'
+                orientation:'right'
+                title:settings.title_1
+                collectionName:settings.collection_1
+                collectionImage:settings.collection_1_image
+                color:'baige'
+                %}
+            </div>
+        {% endif %}
+        <!-- END :: COLLECTION CARD -->
+
+        <!-- COLLECTION CARD2 -->
+         {% if counter == 7 %}
+            <div class='col-md-8 px-small py-1 should-animate dl-1' data-scroll>
+                {% render 
+                'collection-widget'
+                orientation:'left' 
+                title:settings.title_2
+                collectionName:settings.collection_2
+                collectionImage:settings.collection_2_image
+                color:'lightBaige'
+                %}
+            </div>
+        {% endif %}
+        <!-- END :: COLLECTION CARD2 -->
+
+    {% assign counter = counter | plus:1 %}
+    {% endfor %}
+</section>
+</div>
+ {% section 'footer' %}
+ </div>

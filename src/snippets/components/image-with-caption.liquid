@@ -1,0 +1,40 @@
+<div class="image-with-caption h-md-100">
+
+    {% unless proportionMd %}
+        {% assign proportionMd = proportion %}
+    {% endunless %}
+
+    {% unless proportionLg %}
+        {% if proportionMd %}
+            {% assign proportionLg = proportionMd %}    
+        {% else %}
+            {% assign proportionLg = proportion %}  
+        {% endif %}
+    {% endunless %}
+
+    <!-- IMAGE -->
+    {% 
+        render 'parallax-image' 
+        src: src
+        alt: 'Seneca'
+        proportion: proportion
+        proportionMd: proportionMd
+        proportionLg: proportionLg
+    %}
+    <!-- END :: IMAGE -->
+
+    <!-- CAPTION -->
+    <h4
+    class="text-uppercase mt-7 small from-y should-animate dl-3 d-md-block
+    {% if paddedCaption and mobileCaptionNone%} ps-1 pe-3 pe-md-0 d-none
+    {% elsif mobileCaptionNone %} d-none
+    {% elsif paddedCaption %} ps-1 pe-3 pe-md-0
+    {% else %} ps-1 ps-md-0
+    {% endif %}"
+    data-scroll
+    data-scroll-direction="vertical"
+    data-scroll-repeat="false">
+    {{ caption }}
+    </h4>
+    <!-- END ::CAPTION -->
+</div>

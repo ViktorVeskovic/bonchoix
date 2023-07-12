@@ -1,0 +1,11 @@
+.proportion {
+	padding-bottom: var(--proportion);
+
+	@include media-breakpoint-up(md) {
+		padding-bottom: var(--proportion-md);
+	}
+
+	@include media-breakpoint-up(lg) {
+		padding-bottom: var(--proportion-lg);
+	}
+}

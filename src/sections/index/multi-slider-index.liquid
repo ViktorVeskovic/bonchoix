@@ -1,0 +1,169 @@
+{% assign images = 'https://cdn.shopify.com/s/files/1/0511/7974/9539/files/000305960029_1_1_2000x.png?v=1634550658, https://cdn.shopify.com/s/files/1/0511/7974/9539/files/Rectangle_101_fab3a54d-7705-49bb-8f19-e510f72360c9.png?v=1634561697, https://cdn.shopify.com/s/files/1/0511/7974/9539/files/Rectangle_103_d5948a9d-1247-4670-bd55-9fe88104e839.png?v=1634561956, https://cdn.shopify.com/s/files/1/0511/7974/9539/files/Rectangle_98.png?v=1634555292' | split: ", " %}
+
+
+<section class="multi-slider-index row py-3 py-md-5 py-xl-6 ps-xl-2">
+	<!-- LEFT COL -->
+	<div 
+	data-scroll 
+	class="col-custom mt-7 pe-7 d-none d-lg-block should-animate dl-1">
+		<div>
+            {% 
+                render 'swiper' 
+                slides: images
+            %}
+        </div>
+	</div>
+	<!-- END :: LEFT COL -->
+
+	<!-- RIGHT COL -->
+	<div class="col-md d-flex flex-column justify-content-between">
+		<div class="px-1 px-lx-0">
+			<div class="d-flex justify-content-between align-items-center pe-md-2">
+				<div class="d-none d-lg-flex align-items-center">
+			       	<h2 class="h1-big h1-big-md h1-large-lg d-flex flex-column should-animate from-y dl-1"
+			        data-scroll
+			        data-scroll-direction="vertical"
+			        data-scroll-repeat="false">
+			            <span>{{section.settings.big_1}}</span>
+			        </h2>
+
+			        <span
+				    class="small h6-xl text-uppercase content should-animate from-y dl-2 should-animate ps-md-3 col-5"
+				    data-scroll
+				    data-scroll-repeat="false">{{section.settings.small}}</span>
+				</div>
+
+				<div class="d-none d-lg-flex align-items-center should-animate from-y dl-2"
+				data-scroll
+		        data-scroll-direction="vertical"
+		        data-scroll-repeat="false">
+
+					<!-- LEFT ARROW -->
+					<div 
+					data-prev='true'
+					class="arrow-left d-flex align-items-center swiper-nav button-prev">
+						{% render 'arrow' %}
+					</div>
+					<!-- END :: LEFT ARROW -->
+
+					<!-- RIGHT ARROW -->
+					<div 
+					data-next='true'
+					class="arrow-right ms-md-3 d-flex align-items-center swiper-nav button-next">
+						{% render 'arrow' %}
+					</div>
+					<!-- END :: RIGHT ARROW -->
+
+				</div>
+			</div>
+
+			<!-- MOBILE/TABLET HEADLINE -->
+			<h2 class="h1-large h1-large-md h1-large-lg should-animate from-y dl-1 d-block d-lg-none"
+	        data-scroll
+	        data-scroll-direction="vertical"
+	        data-scroll-repeat="false">
+	            <span>{{section.settings.big_1}}</span>
+	        </h2>
+			<!-- END :: MOBILE/TABLET HEADLINE -->
+
+			<h2 class="h1-large h1-large-md h1-large-lg should-animate from-y dl-1"
+	        data-scroll
+	        data-scroll-direction="vertical"
+	        data-scroll-repeat="false">
+	            <span>{{section.settings.big_2}}</span>
+	        </h2>
+
+	        <!--  MOBILE/TABLET ARROWS AND CONTENT -->
+	        <div class="d-flex d-lg-none justify-content-between">
+
+				<span
+			    class="small h6-xl text-uppercase content from-y dl-2 should-animate ps-xl-3 col-6 col-md-5"
+			    data-scroll
+			    data-scroll-repeat="false">{{section.settings.small}}</span>
+
+			    <div class="d-flex align-items-center my-md-1 my-xl-0">
+					<!-- LEFT ARROW -->
+					<div class="arrow-left d-flex align-items-center">
+						{% render 'arrow' %}
+					</div>
+					<!-- END :: LEFT ARROW -->
+
+					<!-- RIGHT ARROW -->
+					<div class="arrow-right ms-1 ms-md-2 ms-lg-3 d-flex align-items-center">
+						{% render 'arrow' %}
+					</div>
+					<!-- END :: RIGHT ARROW -->
+			    </div>
+
+			</div>
+	        <!-- END ::  MOBILE/TABLET ARROWS AND CONTENT -->
+
+		</div>
+
+		<div class="d-flex wrapper">
+			{% for i in (2..4) %}
+			<div class="col-10 col-md-5 px-7">
+				{% 
+	                render 'swiper' 
+	                slides: images
+	                index: i
+	            %}
+			</div>
+				
+	        {% endfor %}
+		</div>
+	</div>
+	<!-- END :: RIGHT COL -->
+ 
+</section>
+
+{% schema %}
+{
+  "name": "Multi Slider",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "big_1",
+      "type": "text",
+      "label": "Big title 1st row",
+      "default":"FIVE"
+    },
+	{
+      "id": "big_2",
+      "type": "text",
+      "label": "Big title 2nd row",
+      "default":"ESSENTIALS"
+    },
+    {
+      "id": "small",
+      "type": "text",
+      "label": "Small title",
+      "default":"WE ARE JUST GETTING WARMED UP."
+    }
+  ],
+  "blocks": [
+      {
+        "type": "text",
+        "name": "Magazin block",
+        "settings": [         
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "id": "description",
+            "type": "textarea",
+            "label": "Description"
+          }
+        ]
+      }
+    ],
+      "presets": [
+        {
+          "category": "Home",
+          "name": "Multi Slider"
+        }
+      ]
+}
+{% endschema %}

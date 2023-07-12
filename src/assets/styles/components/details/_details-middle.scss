@@ -1,0 +1,23 @@
+.details-middle {
+	.top-image {
+		margin-top: -4rem;
+		@include media-breakpoint-up(md) {
+			margin-top: -40vw;
+		}
+		@include media-breakpoint-up(xl) {
+			margin-top: -25vw;
+		}
+	}
+
+	.down-image{
+		min-height: 25rem;
+		height: 110%;
+		z-index: 1;
+		@include media-breakpoint-up(md) {
+			z-index: 0;
+		}
+		@include media-breakpoint-up(xl) {
+			z-index: 1
+		}
+	}
+}

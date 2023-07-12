@@ -1,0 +1,46 @@
+$fontConfig: (
+  mobile: (
+    h1-large: ($font-size-base * 2.8, .9, .0),
+    h1-big: ($font-size-base * 1.8, 1, .0),
+    h1-1-big: ($font-size-base * 1.7, 1, .0),
+    h1: ($font-size-base * 1.8, 1, .0),
+    h2: ($font-size-base * 1.8, 1.2, .0),
+    h2-widget: ($font-size-base * 1, 1.67, .0),
+    p1: ($font-size-base * 1.05, 1.23, .0),
+    p2: ($font-size-base * 1.05, 1.23, .0),
+    p2-widget: ($font-size-base * .5, 1, .0),
+    h6: ($font-size-base * .8, 1.23, .0),
+    h6-1: ($font-size-base * .9, 1.23, .0),  
+    btn: ($font-size-base * .9, 1.23, .0), 
+    small: ($font-size-base * .7, 1.23, .0)
+  ),
+
+  md: (
+    h1-large: ($font-size-base * 5.9, .9, .0),
+    h1-big: ($font-size-base * 2.8, 1, .0),
+    h1: ($font-size-base * 2.8, 1, .0),
+    h2: ($font-size-base * 1.8, 1.2, .0),
+    h2-widget: ($font-size-base * 1.3, 1.49, .0),
+    p1: ($font-size-base * 1.05, 1.23, .0),
+    p2: ($font-size-base * 1.05, 1.23, .0),
+    p2-widget: ($font-size-base * .8, 1, .0),
+    h6: ($font-size-base * .8, 1.23, .0),
+    h6-1: ($font-size-base * .9, 1.23, .0),   
+    btn: ($font-size-base * .9, 1.23, .0),
+    small: ($font-size-base * .7, 1.23, .0),
+  ),
+
+  lg: (
+    h1-large: ($font-size-base * 7.5, .9, .0),
+    h1-big: ($font-size-base * 5, .9, .0),
+    h1: ($font-size-base * 4, .87, .0),
+    h2: ($font-size-base * 3, 1, .0),
+    h2-widget: ($font-size-base * 3, 1, .0),
+    p1: ($font-size-base * 2, 1, .0),
+    p2: ($font-size-base * 1.5, 1.33, .0),
+    p2-widget: ($font-size-base * 1.5, 1, .0),
+    h6: ($font-size-base * .9, 1.23, .0),
+    btn: ($font-size-base * .9, 1.23, .0),
+    small: ($font-size-base * .75, 1.23, .0), 
+  )
+);

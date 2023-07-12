@@ -1,0 +1,119 @@
+<section class="details-image-caption pt-1">
+	
+	<!-- HEADLINE CAPTION -->
+	<div class="pb-1 pb-xl-3 px-1 px-xl-2">
+		{% 
+			render 'headline-caption' 
+			title: section.settings.text_caption
+			content:section.settings.text_caption_content
+		%}
+	</div>
+	<!-- END :: HEADLINE CAPTION -->
+
+	<div class="row">
+		<!-- IMAGE WITH CAPTION -->
+	    <div class="position-relative z-1 down-image col-md-6 col-xl-5 px-1 px-md-0">
+		{% assign detailsImage = section.settings.image | img_url: 'master' %}
+	        {% 
+	            render 'image-with-caption' 
+	            src: detailsImage
+	            alt: 'Seneca'
+	            caption: section.settigns.cap_1
+	            paddedCaption: true
+	            proportion: 1.5
+	            proportionMd: 1.5
+	            proportionLg: 1.5
+	            mobileCaptionNone: true
+	        %}
+	    </div>
+	    <!-- END :: IMAGE WITH CAPTION -->
+
+	    <div class="col-md-6 col-xl-7 ps-1 pe-1 ps-md-4 ps-xl-0 pe-md-2 pe-xl-0 pt-1 pb-3 pt-md-0 pb-md-0">
+	    	<div class="content offset-xl-4 col-xl-6">
+		    	<div 
+		    	class="h6 text-uppercase should-animate from-y dl-1"
+		    	data-scroll
+		        data-scroll-direction="vertical"
+		        data-scroll-repeat="false">
+		    		{{section.settings.text_1}}
+		    	</div>
+	    	</div>
+
+	    	<div class="content offset-xl-4 col-xl-6">
+		    	<div 
+		    	class="h6 text-uppercase should-animate from-y dl-1"
+		    	data-scroll
+		        data-scroll-direction="vertical"
+		        data-scroll-repeat="false">
+					{{section.settings.text_2}}
+		    	</div>
+	    	</div>
+	    </div>
+	</div>
+
+	<!--  FW IMAGE -->
+	<div class="fw-image">
+	{% assign captionImage = section.settings.image_2 | img_url: 'master' %}
+		{% 
+	        render 'parallax-image' 
+	        src: captionImage
+	        alt: 'Seneca'
+	        paddedCaption: true
+	        proportion: 1
+	        proportionMd: 0.7
+	        proportionLg: 0.6
+	    %}
+	</div>
+	<!-- END ::  FW IMAGE -->
+
+
+	<div>
+</section>
+{% schema %}
+{
+  "name": "Details Image Caption",
+  "tag": "section",
+  "settings": [
+    {
+      "id": "text_caption",
+      "type": "text",
+      "label": "Caption",
+      "default":"“Representation has always been a big change that I'd like to see as an Asian American guy."
+    },
+    {
+      "id": "text_caption_content",
+      "type": "text",
+      "label": "Caption Content",
+      "default":"To see that we are not limited to certain roles, that we can do whatever we put our minds to."
+    },
+	{
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image 1"
+    },
+	{
+      "id": "cap_1",
+      "type": "text",
+      "label": "Caption",
+      "default":"Tim wears the Aero Half Zip in Grey and the Vanta Pant in Herringbonee."
+    },
+	{
+      "id": "text_1",
+      "type": "text",
+      "label": "Text 1st",
+      "default":"Change is a constant, and we always have to reevaluate at moments where we feel too comfortable. Comfort is the cousin of complacency. I think we just have to get uncomfortable sometimes."
+    },
+	{
+      "id": "text_2",
+      "type": "text",
+      "label": "Text 2nd",
+      "default":"On the individual level, I've realized that that my voice has power, and it has the influence to change how people think and what they do. Its empowered me. And so, instead of staying quiet and hoping the world will change, that I can be the change. I'm going to quote Ghandi, Be the change you want to see in the world. Everyone has heard it, but it's for real."
+    },
+	{
+        "id": "image_2",
+        "type": "image_picker",
+        "label": "Image 2"
+    }
+  ]
+}
+{% endschema %}

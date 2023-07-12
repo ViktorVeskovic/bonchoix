@@ -1,0 +1,15 @@
+.btn {
+  border:1px solid $black;
+  font-size: .9rem;
+  line-height: 1.16;
+  text-transform: uppercase;
+  padding:1rem;
+  border-radius: 6px;
+  &.btn-transparent {
+    background:transparent;
+  }
+  width: 17rem;
+  @include respond-to(lg) {
+    width: 100%;
+  }
+}

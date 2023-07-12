@@ -1,0 +1,74 @@
+.headline-font {
+    font-family: 'NeueHaasDisplay-Mediu' !important;
+}
+
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, p, a {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .h1, .h2, .h3, .h4, .h5, .h6 {
+    p,
+    a,
+    span,
+    li {
+        font-size: inherit;
+         // !important
+        margin: 0;
+        padding: 0;
+    }
+  }
+  
+  p,
+  a,
+  span,
+  li {
+      margin: 0;
+      padding: 0;
+  }
+
+  .content {
+    &:not(:last-child) {
+      margin-bottom: 1rem;
+    }
+  }
+
+  .verical-align-top {
+    vertical-align: top;
+  }
+  
+//   .regular-font{
+//     font-size: $font-size-base!important;
+//   }
+  
+//   .light-font {
+//     font-family: $lightFont;
+//   }
+  
+//   .thin-font{
+//     font-family: $thinFont!important;  
+//   }
+  
+//   .regular-font-md{
+//     @include media-breakpoint-up(md) {
+//       font-family: $regularFont!important;
+//     } 
+//   }
+
+
+  
+  // RESPONSIVE
+  html {
+    // font-size: 3.2vw;
+    font-size: 20px;
+
+    @include respond-to(md) {
+      font-size: 2.604vw !important; //20px on 768px wide
+    }
+
+    @include respond-to(lg) {
+      // font-size: 1.6vw !important; //23.04px
+      font-size: 1.25vw !important; //20px on 1024px wide
+    }
+}
+  

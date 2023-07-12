@@ -1,0 +1,46 @@
+.two-image-card {
+    &-holder {
+        &:nth-child(2) {
+            .single-cart-quote {
+                @include respond-to(md) {
+                    margin-left:0rem;
+                }
+            }
+        }
+        margin-top:5rem;
+        @include respond-to(md) {
+            max-width:18.85rem;
+        }
+        @include respond-to(lg) {
+            max-width:34.75rem;
+            margin:10rem 2.25rem 0;
+        }
+        .single-card-image {
+            margin-bottom: .5rem;
+            @include respond-to(lg) {
+                margin-bottom: 5rem;
+            }
+        }
+        .single-cart-quote {
+            margin: 0 .8rem;
+        }
+        .year {
+            right:0;
+            bottom:0;
+            @include respond-to(md) {
+                bottom:-3rem;
+                right:unset;
+                left:0rem;
+            }
+            @include respond-to(lg) {
+                bottom: unset;
+                top: 0;
+            }
+        }
+        .quotation {
+            @include respond-to(lg) {
+                padding-left:5rem;
+            }
+        }
+    }
+}

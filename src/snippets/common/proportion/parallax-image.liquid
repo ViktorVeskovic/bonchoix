@@ -1,0 +1,51 @@
+{% comment %}
+SNIPPET - parallax-image.liquid
+@param { boolean } absolute - if true proportions will not work
+@param { number } proportion - proportion of the element
+@param { number } proportionMd - proportion of the element on md screens
+@param { number } proportionLg - proportion of the element on lg screens
+@param { string } alt - alt tag of the image
+param {string } src - src of the image 
+{% endcomment %}
+
+{% unless proportionMd %}
+	{% assign proportionMd = proportion %}
+{% endunless %}
+
+{% unless proportionLg %}
+	{% if proportionMd %}
+		{% assign proportionLg = proportionMd %}	
+	{% else %}
+		{% assign proportionLg = proportion %}	
+	{% endif %}
+{% endunless %}
+
+
+<figure 
+class='parallax-image parallax-wrapper 
+{% if absolute %} position-absolute w-100 h-100 
+{% else %} position-relative proportion h-100
+{% endif %}'
+{% unless absolute %} 
+style='
+	{% if proportion %}
+	--proportion: {{ proportion | times: 100 }}%;
+	--proportion-md: {{ proportionMd | times: 100 }}%;
+	--proportion-lg: {{ proportionLg | times: 100 }}%;
+	{% endif proportion %}
+'{% endunless %}>
+
+	{% unless alt %}
+		{% assign alt = 'Seneca' %}
+	{% endunless %}
+
+	<div class='{% if proportion %} position-absolute {% endif %} parallax-element w-100 h-100 t-0 l-0'>
+		<img 
+	    alt='{{ alt }}' 
+	    src='{{ src }}' 
+	    loading="lazy"
+	    data-scroll 
+	    data-scroll-speed="-.6"
+	    class='w-100 h-100 cover {% if proportion %} position-absolute {% endif %} t-0 l-0' />
+	</div>
+</figure>

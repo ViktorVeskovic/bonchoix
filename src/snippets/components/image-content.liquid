@@ -1,0 +1,34 @@
+<div class="text-content">
+
+    <!-- IMAGE WITH CAPTION -->
+    <div class='
+    color-white
+    {% if bigImage  %} 
+        big-card-wrapper 
+    {% endif %} position-relative'>
+        {% 
+            render 'image-with-caption' 
+            src: src
+            alt: alt
+            caption: caption
+            paddedCaption: paddedCaption
+            proportion: proportion
+            proportionMd: proportionMd
+            proportionLg: proportionLg
+        %}
+    </div>
+    <!-- END :: IMAGE WITH CAPTION -->
+
+    <!-- TITLE TEXT -->
+    <div 
+    class='text-wrapper pt-md-2 pt-xl-5 pt-2 px-1 
+    {% unless bigImage %} ps-md-3 pe-md-1 {% else %} px-md-1 {% endunless %} 
+    px-xl-6 color-white'>
+        {% 
+            render 'title-text' 
+            title: title
+            content: content
+        %}
+    </div>
+    <!-- END :: TITLE TEXT -->
+</div>

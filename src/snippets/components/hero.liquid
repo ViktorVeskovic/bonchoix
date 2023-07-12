@@ -1,0 +1,11 @@
+<section class="hero {% if section.settings.floating-img %}hero--mb{% endif %}">
+    <div class="hero__bg-image hero__bg-image--mob" style="background-image: url({{  'test-hero-mobile.jpg' | asset_url }});"></div>
+    <div class="hero__bg-image hero__bg-image--desk" style="background-image: url({{  'test-hero-desk.jpg' | asset_url }});"></div>
+    <div class="hero__floating-img-wrapper"> 
+        <img class="hero__floating-img" src="{{  'test-float-img.jpg' | asset_url }}" alt="TEST">
+    </div>
+    <div class="hero__container">
+        <h3 class="hero__subtitle">It’s Made In Japan</h3>
+        <h1 class="hero__title">a blessing of water for every skin </h1>
+    </div>
+</section>

@@ -1,0 +1,26 @@
+.visionaries-list {
+    margin-top:4rem;
+    @include respond-to(lg) {
+        margin-top:5rem;
+    }
+    &-title {
+        margin-bottom:1.6rem;
+        @include respond-to(md) {
+            margin-bottom:2.5rem;
+        }
+        @include respond-to(lg) {
+            margin-bottom:1.5rem;
+        }
+    }
+    &-listing {
+        &:nth-of-type(n+2) {
+            margin-top:0rem;
+            @include respond-to(md) {
+                margin-top:4rem;
+            }
+            @include respond-to(lg) {
+                margin-top:8rem;
+            } 
+        }
+    }
+}

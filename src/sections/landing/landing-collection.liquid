@@ -1,0 +1,96 @@
+<div class="collection-page">
+    <section class="product-listing-wrapper d-flex justify-content-between flex-wrap">
+        {% assign colHandle = section.settings.featured_collection %}
+        {% assign counter = 1 %}
+        {% for product in collections[colHandle].products %}
+            {% assign price = product.first_available_variant.price | money %}
+            {% assign image = product.images[0].src | img_url: 'master' %}
+
+            <div class='col-md-4 px-small py-1 should-animate dl-1' data-scroll>
+                {% render 'product-card' 
+                    title: product.title
+                    price: price
+                    image: image
+                    url: product.url
+                %}
+            </div>
+
+            {% if counter == 4 %}
+                <div class='col-md-8 px-small py-1 should-animate dl-1' data-scroll>
+                    {% render 
+                    'collection-widget'
+                    orientation:'right'
+                    title:section.settings.title_1
+                    collectionName:section.settings.collection_1
+                    collectionImage:section.settings.collection_1_image
+                    color:'baige'
+                    %}
+                </div>
+            {% endif %}
+
+            {% if counter == 7 %}
+                <div class='col-md-8 px-small py-1 should-animate dl-1' data-scroll>
+                    {% render 
+                    'collection-widget'
+                    orientation:'left' 
+                    title:settings.section.title_2
+                    collectionName:section.settings.collection_2
+                    collectionImage:section.settings.collection_2_image
+                    color:'lightBaige'
+                    %}
+                </div>
+            {% endif %}
+        {% assign counter = counter | plus:1 %}
+        {% endfor %}
+    </section>
+</div>
+
+{% schema %}
+{
+  "name": "Landing Collection",
+  "tag": "section",
+  "settings": [
+    {
+        "type": "collection",
+        "id": "featured_collection",
+        "label": "Featured collection"
+    },
+    {
+        "id": "title_1",
+        "type": "textarea",
+        "label": "Widget 1 title"
+      },
+      {
+        "id": "collection_1",
+        "type": "textarea",
+        "label": "Widget 1 collection name"
+      },
+      {
+        "id": "collection_1_image",
+        "type": "image_picker",
+        "label": "Widget 1 collection image"
+      },
+      {
+        "id": "title_2",
+        "type": "textarea",
+        "label": "Widget 2 title"
+      },
+      {
+        "id": "collection_2",
+        "type": "textarea",
+        "label": "Widget 1 collection name"
+      },
+      {
+        "id": "collection_2_image",
+        "type": "image_picker",
+        "label": "Widget 2 collection image"
+      }
+  ],
+  "presets": [
+    {
+      "category": "Landing",
+      "name": "Landing Collection"
+    }
+  ]
+}
+{% endschema %}

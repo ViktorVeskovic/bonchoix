@@ -1,0 +1,24 @@
+
+// COLOR CLASSES
+$siteColors: ();
+$siteColors: map-merge((
+    "red":$red,
+    "black":$black,
+    "baige": $baige,
+    "lightBaige": $lightBaige,
+    "lightBlack": $lightBlack,
+    "lightGrey": $lightGrey,
+    "grey": $grey,
+    "dark": $dark,
+    "white": $white,
+), $siteColors);
+
+@each $name, $color in $siteColors {
+  .color-#{$name} {
+    color: $color;
+  }
+  .bg-#{$name} {
+    background-color: $color;
+  }
+}
+

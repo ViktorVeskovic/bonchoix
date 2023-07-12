@@ -1,0 +1,44 @@
+{% comment %}
+SNIPPET - filter-group.liquid
+@param { string } filterType - property to be filtered
+@param { array } filterOptions - array of possible filter options
+@param { string } className - class of the wrapper element
+@param { string } optionClassName - class of the option elements
+@param { string } reset - if should reset the reset link (filters/sort)
+{% endcomment %}
+
+<div class='filter-group {{className}}'>
+    {%if reset %}
+	    <!-- RESET FILTER -->
+	    <a 
+	    data-router-disabled
+	    class='filter-option {{optionClassName}}'
+	    data-reset='{{reset}}'
+	    href='#'>All Products</a>
+	    <!-- END :: RESET FILTER -->
+    {% endif %}
+
+    {% if sort %}
+        <!-- SORT OPTIONS -->
+        {% for option in filterOptions %}
+	        <a 
+	        data-router-disabled
+	        class='filter-option'
+	        data-sort='{{filterType}}'
+	        href='?sort={{option}}'>Highest Rated</a>
+        {% endfor %}
+        <!-- END :: SORT OPTIONS -->
+    {% else %}
+        <!-- COLLECTION FILTER OPTIONS -->
+        {% for option in filterOptions %}
+            <a 
+            data-router-disabled
+            class='filter-option {{optionClassName}}'
+            data-filter='{{filterType}}'
+            data-value='{{option}}'
+            href='?{{filterType}}={{option}}'>{{option}}</a>
+        {% endfor %}
+        <!-- END :: COLLECTION FILTER OPTIONS -->
+    {% endif %}
+
+</div>

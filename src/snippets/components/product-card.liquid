@@ -1,0 +1,22 @@
+<a class='product-card d-block w-100' href="{{url}}">
+    <div 
+    class="product-card-inner" 
+    data-color="{{color}}" 
+    data-options="{{options}}" 
+    data-type="{{type}}">
+
+        {% 
+            render 'proportion-image' 
+            proportion: 1.4
+            proportion-md: 1.4
+            proportion-lg: 1.4
+            src: image
+            className: "product-card-image"
+        %}    
+        
+        <div class="product-card-info">
+            <h6 class="h6 color-black text-uppercase">{{title}}</h6>
+            <h6 class="h6 color-black">{{price}}</h6>
+        </div>
+    </div>
+</a>

@@ -1,0 +1,15 @@
+.landing-middle {
+    .left-image {
+        position: relative;
+        width: 100%;
+        z-index: 1;
+        @include media-breakpoint-up(xl) {
+            width: 112%;
+        }
+    }
+    .fullwidth-image {
+        @include media-breakpoint-up(md) {
+            margin-top: -12vw;
+        }
+    }
+}

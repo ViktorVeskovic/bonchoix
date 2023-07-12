@@ -1,0 +1,29 @@
+{% assign sectionImage = section.settings.image | img_url: '2000x' %}
+<section class="visionaries-hero home-hero">
+    <div class="visionaries-hero-image">
+        {% render 'simple-image' src:sectionImage %}
+    </div>
+    <div class="visionaries-hero-text">
+        {% render 'home-logo' %}
+    </div>
+</section>
+
+{% schema %}
+{
+  "name": "Home Hero",
+  "tag": "section",
+  "settings": [
+    {
+        "id": "image",
+        "type": "image_picker",
+        "label": "Image"
+    }
+  ],
+  "presets": [
+    {
+      "category": "Home",
+      "name": "Home Hero"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,68 @@
+<div class="three-images row pt-3 pt-md-4 pt-xl-5">
+  {% for item in section.blocks %}
+    
+    {% assign image = item.settings.image | img_url: "640x" %}
+ 
+    <div  
+    class="col-md-4 text-center">
+      <div 
+      class="h2 p1-md p1-lg text-uppercase mb-1 should-animate from-y dl-1"
+      data-scroll
+      data-scroll-direction="vertical"
+      data-scroll-repeat="false">
+        {{item.settings.text}}
+      </div>
+      {% 
+        render 'proportion-image' 
+        proportion: 1.6
+        src: image
+      %}
+    </div>
+
+    <!-- MOBILE SWIPER -->
+    <div 
+    data-scroll
+    data-scroll-direction="vertical"
+    data-scroll-repeat="false"
+    class="col-md-5 mt-7 pe-7 d-block d-md-none should-animate dl-1 bg-info">
+      <div>
+        {% 
+            render 'swiper' 
+            slides: image
+        %}
+      </div>
+    </div>
+    <!-- END :: MOBILE SWIPER -->
+
+  {% endfor %}
+</div>
+
+
+
+{% schema %}
+{
+  "name": "3 images with caption",
+  "class": "three-images",
+  "tag": "section",
+  "settings": [],
+  "blocks": [
+    {
+      "type": "Image",
+      "name": "image",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

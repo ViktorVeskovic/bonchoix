@@ -1,0 +1,33 @@
+/* --------------------------------------
+  TYPOGRAPHY
+-------------------------------------- */
+
+// TheSans - English
+// @import url('https://fonts.googleapis.com/css2?family=Lora&display=swap');
+// @font-face {
+//     font-family: "Lora";
+//     font-display: block;
+//     src: url("/fonts/Lora-Regular.ttf");
+//     font-style: normal;
+//   }
+
+// =========================================
+// HELVETICA
+// =========================================
+@font-face {
+  font-family: "NeueHaasDisplay-Roman";
+  font-weight:normal;
+  font-display: block;
+  src: url("{{ 'NeueHaasDisplay-Roman.woff' | asset_url }}"), 
+      url("{{ 'NeueHaasDisplay-Roman.woff2' | asset_url }}");
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "NeueHaasDisplay-Mediu";
+  font-weight:normal;
+  font-display: block;
+  src: url("{{ 'NeueHaasDisplay-Mediu.woff' | asset_url }}"), 
+      url("{{ 'NeueHaasDisplay-Mediu.woff2' | asset_url }}");
+  font-style: normal;
+}

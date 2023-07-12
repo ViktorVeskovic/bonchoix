@@ -1,0 +1,19 @@
+<section class="accordion">
+    {% assign counter = 1 %}
+    {% for acc in items %}
+    <div 
+    data-scroll
+    data-scroll-direction="vertical"
+    data-scroll-repeat="false"
+    class='accordion-item-wrapper mb-1 should-animate from-y dl-{{ index }}'>
+    {% render 'accordion-item' 
+        id: counter
+        title: acc.settings.title
+        content: acc.settings.content
+        contentClass: "content h6-1 h6-1-md h6-xl pe-md-5 text-capitalize pb-1 pb-md-7"
+    %}
+    </div>
+    {% assign counter = counter | plus:1 %}
+    {% endfor %}
+
+</section>

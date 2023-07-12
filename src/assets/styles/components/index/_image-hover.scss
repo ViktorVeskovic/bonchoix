@@ -1,0 +1,14 @@
+.image-hover {
+	&:hover {
+		.overlay {
+			opacity: 1;
+		}
+	}
+	.overlay {
+		width: 101%;
+		height: 101%;
+		left: -1px;
+		transition: .4s;
+		opacity: 0;
+	}
+}

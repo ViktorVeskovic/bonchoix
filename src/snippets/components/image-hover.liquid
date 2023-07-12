@@ -1,0 +1,16 @@
+<div class='image-hover {{className}} position-relative'>
+	
+	{% 
+      render 'parallax-image' 
+      src: src
+      absolute: absolute
+      proportion: proportion
+      proportionMd: proportionMd
+      proportionLg: proportionLg
+      alt: 'Seneca'
+    %}  
+
+    <div class='overlay position-absolute bg-red z-1 t-0 p-1'>
+    	<p class='text-uppercase h6 pe-1 pe-md-0'>{{text}}</p>
+    </div>
+</div>

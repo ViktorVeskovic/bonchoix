@@ -1,0 +1,75 @@
+{% if buttonText %}
+<div class="visionaries-card {{class}}">
+{% else %}
+<a href="{{url}}" class="visionaries-card {{class}}">
+{% endif %}
+    <div data-scroll class="visionaries-card-image should-animate from-y dl-1">
+    {% if class == 'big' %}
+        {% 
+            render 'parallax-image' 
+            src: image
+            proportion: 1.54
+            proportionMd: 1.54
+            proportionLg: 1.65
+            imgClass: ''
+            alt: 'Seneca'
+        %}
+    {% else %}
+        {% 
+            render 'parallax-image' 
+            src: image
+            proportion: 0.89
+            proportionMd: 1.27
+            proportionLg: 1.18
+            imgClass: ''
+            alt: 'Seneca'
+        %}
+    {% endif %}
+        {% comment %} <img class="w-100" src="{{image}}"> {% endcomment %}
+    </div>
+    <div class="visionaries-card-text">
+        {% if date %}
+            <div
+            data-scroll
+            data-scroll-direction="vertical"
+            data-scroll-repeat="false" 
+            class="date h6 should-animate from-y dl-1">{{date}}</div>
+        {% endif %}
+            <div
+            data-scroll
+            data-scroll-direction="vertical"
+            data-scroll-repeat="false" 
+             class="title h2 should-animate from-y dl-2">
+            {{title}}
+            {% unless buttonText %}
+                {% render 'link-arrow'%}
+            {% endunless %}
+            </div>
+        {% if description %}
+            <div
+            data-scroll
+            data-scroll-direction="vertical"
+            data-scroll-repeat="false" 
+             class="description h6 should-animate from-y dl-3">
+            {{description}}
+        </div>
+        {% endif %}
+        {% if author %}
+            <div class="avatar h6 d-flex align-items-center">
+                <img src="{{avatar}}">
+                <span>{{author}}</span>
+            </div>
+        {% endif %}
+        {% if buttonText %}
+            <a
+            data-scroll
+            data-scroll-direction="vertical"
+            data-scroll-repeat="false" 
+             class="btn btn-transparent d-block text-center description should-animate from-y dl-3" href="{{url}}">{{buttonText}} <span>{% render 'link-arrow'%}</span></a>
+        {% endif %}
+    </div>
+{% if buttonText %}
+</div>
+{% else %}
+</a>
+{% endif %}

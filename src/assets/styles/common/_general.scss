@@ -1,0 +1,48 @@
+* {
+   box-sizing: border-box;
+}
+
+html,
+body {
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   -webkit-overflow-scrolling: touch;
+   font-family: $sans;
+   color: $black;
+   height: 100%;
+   width: 100%;
+}
+
+a {
+   color: inherit;
+}
+
+h1, h2, h3, h4, h5 {
+   font-family: $serif;
+}
+
+img {
+   max-width: 100%;
+}
+
+ul {
+   list-style: none;
+}
+
+button {
+   cursor: pointer;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.opacity-4 {
+  opacity: .4;
+}
+
+.nav-offset{
+   padding-top: 2.8rem;
+}

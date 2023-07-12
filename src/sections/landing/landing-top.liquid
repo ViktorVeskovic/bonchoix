@@ -1,0 +1,186 @@
+<section class="landing-top bg-lightBlack pt-1">
+    <!-- HEADLINE -->
+    <div class="bg-baige px-1 px-xl-2 pb-2 pb-xl-4 pt-1 pt-xl-0">
+        <h2 class="h1-big h1-big-md h1-large-lg d-flex flex-column should-animate from-y dl-1"
+        data-scroll
+        data-scroll-direction="vertical"
+        data-scroll-repeat="false">
+            <span>{{section.settings.title_1}}</span>
+            <span>{{section.settings.title_2}}</span>
+            <span class="d-flex justify-content-end">{{section.settings.title_3}}</span>
+        </h2>
+    </div>
+    <!-- END :: HEADLINE -->
+
+    <div class="d-md-flex">
+        <div class="col-md-6 col-xl-5 bg-lightBlack">
+            <!-- LEFT IMAGE -->
+            <div>
+            {% assign leftImage = section.settings.imageLeft | img_url: 'master' %}
+                {% 
+                    render 'parallax-image' 
+                    src: leftImage
+                    proportion: 1.542
+                    proportionMd: 1.485
+                    proportionLg: 1.45
+                    alt: 'Seneca'
+                %}
+            </div>
+            <!-- END :: LEFT IMAGE -->
+
+            <!-- CONTENT AND SMALL IMAGE -->
+            <div class="color-white position-relative d-none d-md-block">
+            {% assign textImage = section.settings.textImage | img_url: 'master' %}
+                {% render 'texts-image'
+                    title1: section.settings.text_image_1
+                    title2: section.settings.text_image_2
+                    image1:textImage
+                 %}
+            </div>
+            <!-- END :: CONTENT AND SMALL IMAGE -->
+
+            <!-- MOBILE TITLE TEXT -->
+            <div class="ps-1 ps-xl-4 pt-1 pb-4 pt-md-4 pt-xl-6 bg-baige mt--1 d-block d-md-none">
+                {% render 
+                    'title-text' 
+                    title: section.settings.title_text_1
+                    content: section.settings.title_text_content
+                %}
+            </div>
+            <!-- END :: MOBILE TITLE TEXT -->
+
+        </div>
+
+        <div class="col-md-6 col-xl-7 d-flex flex-column">
+            <!-- TITLE TEXT -->
+            <div class="ps-1 ps-xl-4 pt-1 pb-4 pt-md-4 pt-xl-6 bg-baige mt--1 d-none d-md-block pe-xl-4">
+                {% render 
+                    'title-text' 
+                    title: section.settings.title_text_1
+                    content: section.settings.title_text_content
+                %}
+            </div>
+            <!-- END ::TITLE TEXT -->
+
+            <div class="flex-grow bg-lightBlack h-100 position-relative">
+                <!-- RIGHT LARGE IMAGE -->
+                <div>
+                {% assign rightImage = section.settings.imageRight | img_url: 'master' %}
+                    {% 
+                        render 'parallax-image' 
+                        src: rightImage  
+                        proportion: 1.542
+                        proportionMd: 1.512
+                        proportionLg: 1.522
+                        alt: 'Seneca'
+                    %}
+                </div>
+                <!-- END ::RIGHT LARGE IMAGE -->
+
+                <!-- MOBILE CONTENT AND SMALL IMAGE -->
+                <div class="color-white position-relative d-block d-md-none">
+                    {% render 'texts-image'
+                        title1: section.settings.text_image_1
+                        title2: section.settings.text_image_2
+                        image1:textImage
+                    %}
+                </div>
+                <!-- END :: MOBILE CONTENT AND SMALL IMAGE -->
+
+                <!-- ABSOUTE IMAGE -->
+                <div class="ps-1 ps-md-0 col-9 col-md-8 col-xl-6 small-image">
+                {% assign absoluteImage = section.settings.imageAbsolute | img_url: 'master' %}
+                    {% 
+                        render 'parallax-image' 
+                        src: absoluteImage
+                        proportion: 1.275
+                        proportionMd: 1.324
+                        proportionLg: 1.243
+                        alt: 'Seneca '
+                    %}    
+                </div>
+                <!-- END :: ABSOUTE IMAGE -->
+
+            </div>
+
+        </div>
+    </div>
+
+</section>
+
+
+{% schema %}
+{
+   "name": "Landing Top Part",
+   "settings": [
+      {
+         "id": "title_1",
+         "type": "text",
+         "label": "HEADLINE 1st row",
+         "default": "VANTA PANT."
+      },
+      {
+         "id": "title_2",
+         "type": "text",
+         "label": "HEADLINE 2nd row",
+         "default": "THE CORE OF YOUR"
+      },
+      {
+         "id": "title_3",
+         "type": "text",
+         "label": "HEADLINE 3rd row",
+         "default": "WARDROBE"
+      },
+      {
+         "id": "imageLeft",
+         "type": "image_picker",
+         "label": "Image"
+      },
+      {
+         "id": "text_image_1",
+         "type": "text",
+         "label": "Text image 1",
+         "default": "GROUND–BREAKING FABRIC FROM ITALY"
+      },
+      {
+         "id": "text_image_2",
+         "type": "text",
+         "label": "Text image 1",
+         "default": "SOFT-LUXURIOUS HANDFEEL. MACHINE WASHABLE. WEAR IT 20+ TIMES BEFORE IT NEEDS TO BE WASHED"
+      },
+      {
+         "id": "textImage",
+         "type": "image_picker",
+         "label": "Text Image Img"
+      },
+      {
+         "id": "title_text_1",
+         "type": "text",
+         "label": "Title Text",
+         "default": "PARED-DOWN PERFORMANCE"
+      },
+      {
+         "id": "title_text_content",
+         "type": "text",
+         "label": "Title Text Content",
+         "default": "Cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+      },
+      {
+         "id": "imageRight",
+         "type": "image_picker",
+         "label": "Right Image"
+      },
+      {
+         "id": "imageAbsolute",
+         "type": "image_picker",
+         "label": "Absolute Image"
+      }
+   ],
+    "presets": [
+        {
+        "category": "Landing",
+        "name": "Landing Top"
+        }
+    ]
+}
+{% endschema %}

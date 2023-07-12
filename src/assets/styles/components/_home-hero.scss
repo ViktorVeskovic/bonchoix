@@ -1,0 +1,11 @@
+.home-hero {
+    .visionaries-hero-text {
+        margin-top: -3.3rem;
+        @include respond-to(md) {
+            margin-top: -3.3rem;
+        }
+        @include respond-to(lg) {
+            margin-top:-7.5rem;
+        }
+    }
+}

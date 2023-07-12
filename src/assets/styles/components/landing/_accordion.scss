@@ -1,0 +1,31 @@
+.accordion {
+    .accordion-item {
+        cursor: pointer;
+        background-color: transparent;
+        border: none;
+        border-radius: 0;
+        border-bottom: 1px solid $black;
+
+        .content {
+            font-weight: 400;
+        }
+        .accordion-plus {
+            width: .6rem;
+            height: .6rem;
+
+            .line--vert{
+                transition: .5s;
+                transform-origin: center;
+            }
+        }
+
+        &.open {
+            .accordion-plus{
+                .line--vert{
+                    transform: rotate(90deg);
+                    opacity: 0;
+                }
+            }
+        }
+    }
+}
