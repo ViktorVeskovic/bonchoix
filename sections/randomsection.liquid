@@ -1,10 +1,10 @@
 <div>
   random section
+  <div>title:{{ section.settings.title_1 }}</div>
   <div>title:{{ section.settings.title_2 }}</div>
-  <div>title:{{ section.settings.collection_2 }}</div>
 
   <div>
-        <img class="w-100 d-block" src="{{ section.settings.collection_2_image | image_url: width: 1100}}"
+        <img class="w-100 d-block" src="{{ section.settings.image | image_url: width: 1100}}"
     </div>
 </div>
 
@@ -14,19 +14,19 @@
   "tag": "section",
   "settings": [
     {
+      "id": "title_1",
+      "type": "textarea",
+      "label": "Title 1"
+    },
+    {
       "id": "title_2",
       "type": "textarea",
-      "label": "Widget 2 title"
+      "label": "Title 2"
     },
     {
-      "id": "collection_2",
-      "type": "textarea",
-      "label": "Widget 1 collection name"
-    },
-    {
-      "id": "collection_2_image",
+      "id": "image",
       "type": "image_picker",
-      "label": "Widget 2 collection image"
+      "label": "Image"
     }
   ],
   "presets": [
