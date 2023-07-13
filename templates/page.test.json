@@ -3,9 +3,9 @@
     "66aadd66-5869-4ea1-a734-c6c39886e18f": {
       "type": "randomsection",
       "settings": {
+        "title_1": "test",
         "title_2": "test",
-        "collection_2": "test",
-        "collection_2_image": "shopify:\/\/shop_images\/person-stands-on-rocks-poking-out-of-the-ocean-shoreline.jpg"
+        "image": "shopify:\/\/shop_images\/rack-of-womens-clothing.jpg"
       }
     }
   },
